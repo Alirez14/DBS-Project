@@ -1,0 +1,78 @@
+@startuml
+
+
+object Angestellte {
+  + PK_AngID
+    Sex
+    Vorname
+    Nachname
+    Email
+    Gehalt
+  - FK_FirmaID
+  - FK_Abt_nr
+}
+
+object Kunde {
+  + PK_KundID
+    Sex
+    Vorname
+    Nachname
+    Adresse
+    City
+    Telefon
+    Email
+}
+
+object Projekt {
+  + PK_Proj_nr
+  - FK_Nder_nr
+    Name
+    Start_Date
+    End_Date
+    Projektkosten
+}
+
+object Pro_Ang	 {
+  - FK_AngID
+  - FK_Proj_nr
+}
+
+object Abteilung {
+  + PK_Abt_nr
+    Name
+    Email
+    Anzahl_Angestellte
+    Telefon
+
+}
+
+object Niederlassung {
+  + PK_FirmaID
+  	Ort
+    Telefon
+    Email
+}
+
+
+
+object Rechnung {
+    + PK_RechID
+    - FK_Proj_nr
+    - FK_KundID
+    Datum
+    Preis
+}
+
+Rechnung "1"--"n" Projekt
+Rechnung "n"--"1" Kunde
+
+Angestellte "n"--"" Projektteilnehmer
+Projektteilnehmer ""--"n"  Projekt
+
+
+Angestellte "n"--"1" Abteilung
+Angestellte "n"--"1" Niederlassung
+
+Projekt "n"--"1" Kunde
+
+@enduml
