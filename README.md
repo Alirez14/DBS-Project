@@ -1,3 +1,5 @@
+###ALWAYS PULL FIRST THEN WORK THEN PUSH
+
 # DBS-Projekt
 
 ## Arbeitsteilung
