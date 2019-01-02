@@ -1,6 +1,6 @@
 ﻿namespace DBS_GUI
 {
-    partial class Abteillung
+    partial class Nider
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.unternehmDataSet = new DBS_GUI.UnternehmDataSet();
+            this.niederlassungBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.niederlassungTableAdapter = new DBS_GUI.UnternehmDataSetTableAdapters.NiederlassungTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unternehmDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.niederlassungBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowDrop = true;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 213);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Abteillung
+            // unternehmDataSet
+            // 
+            this.unternehmDataSet.DataSetName = "UnternehmDataSet";
+            this.unternehmDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // niederlassungBindingSource
+            // 
+            this.niederlassungBindingSource.DataMember = "Niederlassung";
+            this.niederlassungBindingSource.DataSource = this.unternehmDataSet;
+            // 
+            // niederlassungTableAdapter
+            // 
+            this.niederlassungTableAdapter.ClearBeforeFill = true;
+            // 
+            // Nider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Abteillung";
-            this.Text = "Abteillung";
-            this.Load += new System.EventHandler(this.Abteillung_Load);
+            this.Name = "Nider";
+            this.Text = "Nider";
+            this.Load += new System.EventHandler(this.Nider_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unternehmDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.niederlassungBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -61,5 +81,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private UnternehmDataSet unternehmDataSet;
+        private System.Windows.Forms.BindingSource niederlassungBindingSource;
+        private UnternehmDataSetTableAdapters.NiederlassungTableAdapter niederlassungTableAdapter;
     }
 }

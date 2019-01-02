@@ -88,5 +88,18 @@ namespace DBS_GUI {
                 connection.Close();
             }
          }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Abteillung form = new Abteillung();
+            form.ShowDialog();
+            
+        }
+
+        private void Niderl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Nider form = new Nider();
+            form.ShowDialog();
+        }
     }
 }

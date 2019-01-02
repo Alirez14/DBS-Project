@@ -52,7 +52,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDBServer = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.Ablitungen = new System.Windows.Forms.LinkLabel();
+            this.unternehmDataSet1 = new DBS_GUI.UnternehmDataSet();
+            this.Niderl = new System.Windows.Forms.LinkLabel();
             this.groupSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unternehmDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -288,12 +292,47 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Datenbankserver:";
             // 
+            // Ablitungen
+            // 
+            this.Ablitungen.ActiveLinkColor = System.Drawing.Color.DimGray;
+            this.Ablitungen.AutoSize = true;
+            this.Ablitungen.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ablitungen.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Ablitungen.Location = new System.Drawing.Point(29, 438);
+            this.Ablitungen.Name = "Ablitungen";
+            this.Ablitungen.Size = new System.Drawing.Size(105, 24);
+            this.Ablitungen.TabIndex = 15;
+            this.Ablitungen.TabStop = true;
+            this.Ablitungen.Text = "Ablitungen";
+            this.Ablitungen.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // unternehmDataSet1
+            // 
+            this.unternehmDataSet1.DataSetName = "UnternehmDataSet";
+            this.unternehmDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Niderl
+            // 
+            this.Niderl.ActiveLinkColor = System.Drawing.Color.DimGray;
+            this.Niderl.AutoSize = true;
+            this.Niderl.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Niderl.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Niderl.Location = new System.Drawing.Point(29, 481);
+            this.Niderl.Name = "Niderl";
+            this.Niderl.Size = new System.Drawing.Size(142, 24);
+            this.Niderl.TabIndex = 16;
+            this.Niderl.TabStop = true;
+            this.Niderl.Text = "Niederlassung";
+            this.Niderl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Niderl_LinkClicked);
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 482);
+            this.ClientSize = new System.Drawing.Size(513, 553);
             this.ControlBox = false;
+            this.Controls.Add(this.Niderl);
+            this.Controls.Add(this.Ablitungen);
             this.Controls.Add(this.groupSettings);
             this.Controls.Add(this.btnActiveAngestellten);
             this.Controls.Add(this.btnEditAngestellten);
@@ -318,6 +357,7 @@
             this.Text = "Hauptmenü";
             this.groupSettings.ResumeLayout(false);
             this.groupSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unternehmDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,6 +390,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnUpdateSettings;
         private System.Windows.Forms.TextBox txtUsername;
-
+        private System.Windows.Forms.LinkLabel Ablitungen;
+        private UnternehmDataSet unternehmDataSet1;
+        private System.Windows.Forms.LinkLabel Niderl;
     }
 }

@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace DBS_GUI
 {
-    public partial class Abteillung : Form
+    public partial class Nider : Form
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
-        public Abteillung()
+        public Nider()
         {
             InitializeComponent();
         }
 
-        private void Abteillung_Load(object sender, EventArgs e)
+        private void Nider_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = db.Abteilungs;
-
+            dataGridView1.DataSource = db.Niederlassungs;
             
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

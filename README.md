@@ -1,4 +1,4 @@
-### ALWAYS PULL FIRST THEN WORK THEN PUSH
+##### ALWAYS PULL FIRST THEN WORK THEN PUSH
 
 # DBS-Projekt
 
@@ -32,18 +32,18 @@ viewProjektteilnehmer           Markus                    10%
 addProjektteilnehmer            Markus                    10%
 deactivateProjektteilnehmer     Markus                     0%
 
-viewAbteilung                   Alireza                    0%
-addAbteilung                    Alireza                    0%
-updateAbteilung                 Alireza                    0%
+viewAbteilung                   Alireza                    100%
+addAbteilung                    Alireza                    50%
+updateAbteilung                 Alireza                    50%
 deactivateAbteilung             Alireza                    0%
 
-viewNiederlassung               Alireza                    0%
-addNiederlassung                Alireza                    0%
-updateNiederlassung             Alireza                    0%
+viewNiederlassung               Alireza                    100%
+addNiederlassung                Alireza                    50%
+updateNiederlassung             Alireza                    50%
 deactivateNiederlassung         Alireza                    0%
 
 
-viewProjekt                     Alireza                    0%
+viewProjekt                     Sina                       0%
 addProjekt                      Sina                       0%
 updateProjekt                   Sina                       0%
 deactivateProjekt               Sina                       0%
