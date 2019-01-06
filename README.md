@@ -1,4 +1,4 @@
-##### ALWAYS PULL FIRST THEN WORK THEN PUSH
+#### ALWAYS PULL FIRST THEN WORK THEN PUSH
 
 # DBS-Projekt
 
@@ -35,9 +35,9 @@ updateAngestellte               Markus                     0%
 Projektteilnehmer               Markus                    10%
 
 viewAbteilung                   Alireza                  100%
-addAbteilung                    Alireza                   50%
-updateAbteilung                 Alireza                   50%
-deactivateAbteilung             Alireza                    0%
+addAbteilung                    Alireza                  100%
+updateAbteilung                 Alireza                  100%
+deactivateAbteilung             Alireza                  100%
 
 viewNiederlassung               Alireza                  100%
 addNiederlassung                Alireza                   50%
@@ -45,23 +45,27 @@ updateNiederlassung             Alireza                   50%
 deactivateNiederlassung         Alireza                    0%
 
 
-viewProjekt                     Sina                       0%
-addProjekt                      Sina                       0%
-updateProjekt                   Sina                       0%
-deactivateProjekt               Sina                       0%
+viewProjekt                     Sina                     100%
+addProjekt                      Sina                     100%
+updateProjekt                   Sina                     100%
+deactivateProjekt               Sina                     100%
 
-viewBestellungen                Sina                       0%
-addBestelleung                  Sina                       0%
+viewBestellungen                Sina                     100%
+addBestelleung                  Sina                     100%
 
-viewKunde                       Sina                       0%
-addKunde                        Sina                       0%
-updateKunde                     Sina                       0%
-deactivateKunde                 Sina                       0%
+viewKunde                       Sina                     100%
+addKunde                        Sina                     100%
+updateKunde                     Sina                     100%
+deactivateKunde                 Sina                     100%
 ```
 
 * einmal generierte Bestellungen werden aus Datenschutzgründen nicht geändert/gelöscht!
 * View und Update bei Projektteilnehmer in einer Form?
+---
 
+### GIT CONFIGURATION
+
+### Alireza Esbati
 
 ---
 
