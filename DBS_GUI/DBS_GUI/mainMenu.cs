@@ -22,7 +22,6 @@ namespace DBS_GUI {
             isWindowsAuthenticated.Checked = true;
             txtPassword.Enabled = false;
             txtUsername.Enabled = false;
-
             txtPassword.PasswordChar = '*';
         }
 
@@ -57,8 +56,8 @@ namespace DBS_GUI {
             form.ShowDialog();
         }
 
-        private void btnExit_Click(object sender, EventArgs e) {
-            this.Close();
+        private void btnEditAngestellten_Click(object sender, EventArgs e) {
+            MessageBox.Show("Edit Angestellten: " + txtAngestellten.Text);
         }
 
         private void btnProjektteilnehmer_Click(object sender, EventArgs e) {
@@ -67,13 +66,74 @@ namespace DBS_GUI {
         }
 
         private void btnCreateProject_Click(object sender, EventArgs e) {
-            raiseTesterrorSQL();
+            MessageBox.Show("Ein neues Projekt erstellen!");
         }
 
         private void btnShowProjects_Click(object sender, EventArgs e) {
+            MessageBox.Show("Zeige alle Projekte an!");
+        }
+
+        private void btnEditProjekt_Click(object sender, EventArgs e) {
+            MessageBox.Show("Edit Projekt: " + txtProjekt.Text);
+        }
+
+        private void btnCreateBestellung_Click(object sender, EventArgs e) {
+            MessageBox.Show("Eine neue Bestellung erstellen!");
+        }
+
+        private void btnViewBestellungen_Click(object sender, EventArgs e) {
+            MessageBox.Show("Zeige alle Bestellungen an!");
+        }
+
+        private void btnCreateKunde_Click(object sender, EventArgs e) {
+            MessageBox.Show("Einen neuen Kunden erstellen!");
+        }
+
+        private void btnViewKunden_Click(object sender, EventArgs e) {
+            MessageBox.Show("Zeige alle Kunden an!");
+        }
+
+        private void btnEditKunde_Click(object sender, EventArgs e) {
+            MessageBox.Show("Edit Kunden: " + txtKunde.Text);
+        }
+
+        private void btnCreateNiederlassung_Click(object sender, EventArgs e) {
+            MessageBox.Show("Eine neue Niederlassung erstellen!");
+        }
+
+        private void btnViewNiederlassungen_Click(object sender, EventArgs e) {
+            // MessageBox.Show("Zeige alle Niederlassungen an!");
+            Nider form = new Nider();
+            form.ShowDialog();
+        }
+
+        private void btnEditNiederlassung_Click(object sender, EventArgs e) {
+            MessageBox.Show("Edit Niederlassung: " + txtNiederlassung.Text);
+        }
+
+        private void btnCreateAbteilung_Click(object sender, EventArgs e) {
+            MessageBox.Show("Eine neue Abteilung erstellen!");
+        }
+
+        private void btnViewAbteilung_Click(object sender, EventArgs e) {
+            // MessageBox.Show("Zeige alle Abteilungen an!");
+            Abteillung form = new Abteillung();
+            form.ShowDialog();
+        }
+
+        private void btnEditAbteilung_Click(object sender, EventArgs e) {
+            MessageBox.Show("Edit Abteilung: " + txtAbteilung.Text);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void btnRaiseTestError_Click(object sender, EventArgs e) {
             raiseTesterrorSQL();
         }
 
+        // SQL Help functions:
         private void raiseTesterrorSQL() {
             try {
                 connection.Open();
@@ -87,19 +147,7 @@ namespace DBS_GUI {
             finally {
                 connection.Close();
             }
-         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Abteillung form = new Abteillung();
-            form.ShowDialog();
-            
         }
 
-        private void Niderl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Nider form = new Nider();
-            form.ShowDialog();
-        }
     }
 }

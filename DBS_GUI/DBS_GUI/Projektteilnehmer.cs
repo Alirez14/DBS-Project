@@ -56,18 +56,8 @@ namespace DBS_GUI {
         }
 
         private void btnSubmit_Click(object sender, EventArgs e) {
-            try {
-                connection.Open();
-                SqlCommand cmd = new SqlCommand("uspTesterror", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.ToString() + "\n" + ex.StackTrace);
-            }
-            finally {
-                connection.Close();
-            }
+            MessageBox.Show("Nothing changed!");
+            this.Close();
         }
 
         private void ProjectChanged(object sender, EventArgs e) {

@@ -12,6 +12,11 @@
 * Datenbankgrundstruktur fertig.
 * Datenbankanbindung (Windows Authentifizierung und SQL Login) fertig.
 * Erste Windows Forms fertig.
+* Main Menu fertig
+* Angestellte fehlt nur mehr Update
+* 
+* 
+* 
 
 #### Arbeitspakete
 ```
@@ -21,25 +26,22 @@ DBS_GUI
 form                            designed by       Fortschritt
 ---------------------------------------------------------------
 
-mainMenu                        Markus                    65%
+mainMenu                        Markus                   100%
 
-viewAngestellte                 Markus                    85%
+viewAngestellte                 Markus                   100%
 addAngestellte                  Markus                   100%
 updateAngestellte               Markus                     0%
-deactivateAngestellte           Markus                     0%
 
-viewProjektteilnehmer           Markus                    10%
-addProjektteilnehmer            Markus                    10%
-deactivateProjektteilnehmer     Markus                     0%
+Projektteilnehmer               Markus                    10%
 
-viewAbteilung                   Alireza                    100%
-addAbteilung                    Alireza                    50%
-updateAbteilung                 Alireza                    50%
+viewAbteilung                   Alireza                  100%
+addAbteilung                    Alireza                   50%
+updateAbteilung                 Alireza                   50%
 deactivateAbteilung             Alireza                    0%
 
-viewNiederlassung               Alireza                    100%
-addNiederlassung                Alireza                    50%
-updateNiederlassung             Alireza                    50%
+viewNiederlassung               Alireza                  100%
+addNiederlassung                Alireza                   50%
+updateNiederlassung             Alireza                   50%
 deactivateNiederlassung         Alireza                    0%
 
 
@@ -58,7 +60,7 @@ deactivateKunde                 Sina                       0%
 ```
 
 * einmal generierte Bestellungen werden aus Datenschutzgründen nicht geändert/gelöscht!
-* Update bei Projektteilnehmer nicht notwendig!
+* View und Update bei Projektteilnehmer in einer Form?
 
 
 ---
@@ -68,16 +70,24 @@ deactivateKunde                 Sina                       0%
 #### Ervin, Markus Koller
 
 #### Fortschritt:
+* 6 Stored Procedures (test error, Angestellte, Projekte)   100%
+* 1 View (showAngestellteNicely)                            100%
+* einen Test user erstellt (user="maxi" pwd="1234")         100%
+
+> see 'markuskrenn.sql'
+
+* 
 * 
 * 
 
+
 #### Arbeitspakete
 ```
-min. 2 Stored Procedures
+Stored Procedures         pro User Form ~1 Procedure
 min. 2 Trigger            (z.B.: update Angestellte, update Rechnungspreis)
-min. 2 Views              (z.B.: Rechnung)
-min. 2 Cursor
-min. 2 Indexe
+min. 2 Views              (z.B.: Rechnung, showAngestellteNicely)
+min. 2 Cursor             ???
+min. 2 Indexe             ???
 
 Error Handling !!!
 ```

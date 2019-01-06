@@ -43,7 +43,7 @@
             labelTeilnehmer.AutoSize = true;
             labelTeilnehmer.Location = new System.Drawing.Point(12, 61);
             labelTeilnehmer.Name = "labelTeilnehmer";
-            labelTeilnehmer.Size = new System.Drawing.Size(81, 16);
+            labelTeilnehmer.Size = new System.Drawing.Size(92, 19);
             labelTeilnehmer.TabIndex = 1;
             labelTeilnehmer.Text = "Teilnehmer:";
             // 
@@ -52,7 +52,7 @@
             fK_Proj_nrLabel.AutoSize = true;
             fK_Proj_nrLabel.Location = new System.Drawing.Point(12, 24);
             fK_Proj_nrLabel.Name = "fK_Proj_nrLabel";
-            fK_Proj_nrLabel.Size = new System.Drawing.Size(56, 16);
+            fK_Proj_nrLabel.Size = new System.Drawing.Size(64, 19);
             fK_Proj_nrLabel.TabIndex = 3;
             fK_Proj_nrLabel.Text = "Projekt:";
             // 
@@ -60,17 +60,17 @@
             // 
             this.selectProjekt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectProjekt.FormattingEnabled = true;
-            this.selectProjekt.Location = new System.Drawing.Point(99, 21);
+            this.selectProjekt.Location = new System.Drawing.Point(110, 21);
             this.selectProjekt.Name = "selectProjekt";
-            this.selectProjekt.Size = new System.Drawing.Size(377, 24);
+            this.selectProjekt.Size = new System.Drawing.Size(366, 27);
             this.selectProjekt.TabIndex = 4;
             this.selectProjekt.SelectedIndexChanged += new System.EventHandler(this.ProjectChanged);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(388, 365);
+            this.btnSubmit.Location = new System.Drawing.Point(370, 365);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(88, 30);
+            this.btnSubmit.Size = new System.Drawing.Size(106, 30);
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Bestätigen";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -79,24 +79,24 @@
             // selectTeilnehmer
             // 
             this.selectTeilnehmer.FormattingEnabled = true;
-            this.selectTeilnehmer.ItemHeight = 16;
-            this.selectTeilnehmer.Location = new System.Drawing.Point(99, 83);
+            this.selectTeilnehmer.ItemHeight = 19;
+            this.selectTeilnehmer.Location = new System.Drawing.Point(110, 102);
             this.selectTeilnehmer.Name = "selectTeilnehmer";
             this.selectTeilnehmer.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.selectTeilnehmer.Size = new System.Drawing.Size(377, 276);
+            this.selectTeilnehmer.Size = new System.Drawing.Size(366, 251);
             this.selectTeilnehmer.TabIndex = 6;
             // 
             // txtTeilnehmerfilter
             // 
-            this.txtTeilnehmerfilter.Location = new System.Drawing.Point(99, 58);
+            this.txtTeilnehmerfilter.Location = new System.Drawing.Point(110, 58);
             this.txtTeilnehmerfilter.Name = "txtTeilnehmerfilter";
-            this.txtTeilnehmerfilter.Size = new System.Drawing.Size(377, 23);
+            this.txtTeilnehmerfilter.Size = new System.Drawing.Size(366, 27);
             this.txtTeilnehmerfilter.TabIndex = 8;
             this.txtTeilnehmerfilter.TextChanged += new System.EventHandler(this.Teilnehmerfilter_changed);
             // 
             // Projektteilnehmer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 404);
             this.Controls.Add(this.txtTeilnehmerfilter);
