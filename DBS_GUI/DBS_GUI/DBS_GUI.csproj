@@ -54,6 +54,9 @@
     <Compile Include="Abteillung.Designer.cs">
       <DependentUpon>Abteillung.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataClasses1.cs">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
