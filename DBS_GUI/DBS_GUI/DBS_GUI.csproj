@@ -54,6 +54,18 @@
     <Compile Include="Abteillung.Designer.cs">
       <DependentUpon>Abteillung.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddressUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddressUpdate.designer.cs">
+      <DependentUpon>AddressUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CityUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CityUpdate.designer.cs">
+      <DependentUpon>CityUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses1.cs">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
@@ -62,11 +74,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteCus.designer.cs">
+      <DependentUpon>DeleteCus.cs</DependentUpon>
+    </Compile>
     <Compile Include="editAngestellten.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="editAngestellten.Designer.cs">
       <DependentUpon>editAngestellten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailUpdate.designer.cs">
+      <DependentUpon>EmailUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kunde.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kunde.designer.cs">
+      <DependentUpon>Kunde.cs</DependentUpon>
     </Compile>
     <Compile Include="newAngestellten.cs">
       <SubType>Form</SubType>
@@ -92,6 +122,24 @@
     <Compile Include="Nider.Designer.cs">
       <DependentUpon>Nider.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhoneUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneUpdate.designer.cs">
+      <DependentUpon>PhoneUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Projekt.designer.cs">
+      <DependentUpon>Projekt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjektBearbeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjektBearbeiten.designer.cs">
+      <DependentUpon>ProjektBearbeiten.cs</DependentUpon>
+    </Compile>
     <Compile Include="Projektteilnehmer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +147,12 @@
       <DependentUpon>Projektteilnehmer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjShow.Designer.cs">
+      <DependentUpon>ProjShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnternehmDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -108,8 +162,23 @@
     <EmbeddedResource Include="Abteillung.resx">
       <DependentUpon>Abteillung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddressUpdate.resx">
+      <DependentUpon>AddressUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CityUpdate.resx">
+      <DependentUpon>CityUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteCus.resx">
+      <DependentUpon>DeleteCus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editAngestellten.resx">
       <DependentUpon>editAngestellten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailUpdate.resx">
+      <DependentUpon>EmailUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kunde.resx">
+      <DependentUpon>Kunde.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newAngestellten.resx">
       <DependentUpon>newAngestellten.cs</DependentUpon>
@@ -123,8 +192,20 @@
     <EmbeddedResource Include="Nider.resx">
       <DependentUpon>Nider.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhoneUpdate.resx">
+      <DependentUpon>PhoneUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projekt.resx">
+      <DependentUpon>Projekt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjektBearbeiten.resx">
+      <DependentUpon>ProjektBearbeiten.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Projektteilnehmer.resx">
       <DependentUpon>Projektteilnehmer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjShow.resx">
+      <DependentUpon>ProjShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
