@@ -1,5 +1,11 @@
 #### ALWAYS PULL FIRST THEN WORK THEN PUSH
+---
+## NOTIFICATIONS
 
+# Hard Rested master to dev commit now master is same with dev !
+
+
+---
 # DBS-Projekt
 
 ## Arbeitsteilung
@@ -32,7 +38,7 @@ viewAngestellte                 Markus                   100%
 addAngestellte                  Markus                   100%
 updateAngestellte               Markus                   100%
 
-Projektteilnehmer               Markus                     0%
+Projektteilnehmer               Markus                   100%
 
 viewAbteilung                   Alireza                  100%
 addAbteilung                    Alireza                  100%
@@ -40,9 +46,9 @@ updateAbteilung                 Alireza                  100%
 deactivateAbteilung             Alireza                  100%
 
 viewNiederlassung               Alireza                  100%
-addNiederlassung                Alireza                   50%
-updateNiederlassung             Alireza                   50%
-deactivateNiederlassung         Alireza                    0%
+addNiederlassung                Alireza                  100%
+updateNiederlassung             Alireza                  100%
+deactivateNiederlassung         Alireza                  100%
 
 
 viewProjekt                     Sina                     100%
