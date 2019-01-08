@@ -8,7 +8,8 @@ namespace DBS_GUI {
     public partial class mainMenu : Form {
 
         // holds connection to database
-        private SqlConnection connection;
+        public SqlConnection connection;
+        public string SQL;
 
         public mainMenu() {
             InitializeComponent();
