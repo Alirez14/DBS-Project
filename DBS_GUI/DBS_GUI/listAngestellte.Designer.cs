@@ -49,7 +49,7 @@
             // showDeactivated
             // 
             this.showDeactivated.AutoSize = true;
-            this.showDeactivated.Location = new System.Drawing.Point(147, 17);
+            this.showDeactivated.Location = new System.Drawing.Point(168, 17);
             this.showDeactivated.Name = "showDeactivated";
             this.showDeactivated.Size = new System.Drawing.Size(281, 23);
             this.showDeactivated.TabIndex = 1;
@@ -60,9 +60,9 @@
             // 
             this.btnRefresh.Location = new System.Drawing.Point(12, 12);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(107, 30);
+            this.btnRefresh.Size = new System.Drawing.Size(131, 30);
             this.btnRefresh.TabIndex = 2;
-            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Text = "Aktualisieren";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 

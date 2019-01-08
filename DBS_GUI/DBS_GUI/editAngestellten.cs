@@ -39,8 +39,8 @@ namespace DBS_GUI {
                     nachnameTextBox.Text = (String) rdr["Nachname"];
                     emailTextBox.Text = (String) rdr["Email"];
                     gehaltNumericUpDown.Value = (Int32)rdr["Gehalt"];
-                    abt_nrComboBox.SelectedValue = rdr["Abt_nr"];
-                    firmaIDComboBox.SelectedValue = rdr["FirmaID"];
+                    abt_nrComboBox.SelectedValue = rdr["FK_Abt_nr"];
+                    firmaIDComboBox.SelectedValue = rdr["FK_FirmaID"];
                     isActive.Checked = (Boolean) rdr["active"];
                 }
             }

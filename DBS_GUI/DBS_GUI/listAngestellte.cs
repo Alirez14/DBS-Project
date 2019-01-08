@@ -27,6 +27,9 @@ namespace DBS_GUI {
             else {
                 dataviewAngestellte.DataSource = getAngestellte(0);
             }
+            foreach (DataGridViewColumn column in dataviewAngestellte.Columns) {
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
         private DataTable getAngestellte(int active) {
