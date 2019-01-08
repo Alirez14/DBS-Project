@@ -100,32 +100,16 @@ namespace DBS_GUI {
             MessageBox.Show("Edit Kunden: " + (Int32)KundenID.Value);
         }
 
-        private void btnCreateNiederlassung_Click(object sender, EventArgs e) {
-            MessageBox.Show("Eine neue Niederlassung erstellen!");
-        }
-
         private void btnViewNiederlassungen_Click(object sender, EventArgs e) {
             // MessageBox.Show("Zeige alle Niederlassungen an!");
             Nider form = new Nider();
             form.ShowDialog();
         }
 
-        private void btnEditNiederlassung_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Niederlassung: " + (Int32)NiederlassungsID.Value);
-        }
-
-        private void btnCreateAbteilung_Click(object sender, EventArgs e) {
-            MessageBox.Show("Eine neue Abteilung erstellen!");
-        }
-
         private void btnViewAbteilung_Click(object sender, EventArgs e) {
             // MessageBox.Show("Zeige alle Abteilungen an!");
             Abteillung form = new Abteillung();
             form.ShowDialog();
-        }
-
-        private void btnEditAbteilung_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Abteilung: " + (Int32)AbteilungID.Value);
         }
 
         private void btnExit_Click(object sender, EventArgs e) {
