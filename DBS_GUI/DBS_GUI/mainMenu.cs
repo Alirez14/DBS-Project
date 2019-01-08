@@ -68,36 +68,16 @@ namespace DBS_GUI {
             form.ShowDialog();
         }
 
-        private void btnCreateProject_Click(object sender, EventArgs e) {
-            MessageBox.Show("Ein neues Projekt erstellen!");
-        }
-
-        private void btnShowProjects_Click(object sender, EventArgs e) {
-            MessageBox.Show("Zeige alle Projekte an!");
-        }
-
-        private void btnEditProjekt_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Projekt: " + (Int32)ProjektID.Value);
-        }
-
-        private void btnCreateBestellung_Click(object sender, EventArgs e) {
-            MessageBox.Show("Eine neue Bestellung erstellen!");
-        }
-
-        private void btnViewBestellungen_Click(object sender, EventArgs e) {
-            MessageBox.Show("Zeige alle Bestellungen an!");
-        }
-
-        private void btnCreateKunde_Click(object sender, EventArgs e) {
-            MessageBox.Show("Einen neuen Kunden erstellen!");
+        private void btnViewProjekteBestellungen_Click(object sender, EventArgs e) {
+            // MessageBox.Show("Projekte und/oder Bestellungen anzeigen/bearbeiten.");
+            projektForm form = new projektForm();
+            form.ShowDialog();
         }
 
         private void btnViewKunden_Click(object sender, EventArgs e) {
-            MessageBox.Show("Zeige alle Kunden an!");
-        }
-
-        private void btnEditKunde_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Kunden: " + (Int32)KundenID.Value);
+            // MessageBox.Show("Zeige alle Kunden an!");
+            kundeForm form = new kundeForm();
+            form.ShowDialog();
         }
 
         private void btnViewNiederlassungen_Click(object sender, EventArgs e) {
@@ -135,5 +115,7 @@ namespace DBS_GUI {
                 connection.Close();
             }
         }
+
+
     }
 }
