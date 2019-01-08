@@ -62,6 +62,7 @@
             // 
             // ADDbtn
             // 
+            this.ADDbtn.Enabled = false;
             this.ADDbtn.Location = new System.Drawing.Point(713, 234);
             this.ADDbtn.Name = "ADDbtn";
             this.ADDbtn.Size = new System.Drawing.Size(75, 23);
@@ -96,6 +97,7 @@
             this.nameab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.nameab.Size = new System.Drawing.Size(166, 20);
             this.nameab.TabIndex = 4;
+            this.nameab.TextChanged += new System.EventHandler(this.nameab_TextChanged);
             // 
             // Telefonab
             // 
@@ -108,6 +110,7 @@
             // 
             // updatebtn
             // 
+            this.updatebtn.Enabled = false;
             this.updatebtn.Location = new System.Drawing.Point(713, 366);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(75, 23);
@@ -124,9 +127,11 @@
             this.IDFinder.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.IDFinder.Size = new System.Drawing.Size(166, 20);
             this.IDFinder.TabIndex = 7;
+            this.IDFinder.TextChanged += new System.EventHandler(this.IDFinder_TextChanged);
             // 
             // Savebtn
             // 
+            this.Savebtn.Enabled = false;
             this.Savebtn.Location = new System.Drawing.Point(713, 395);
             this.Savebtn.Name = "Savebtn";
             this.Savebtn.Size = new System.Drawing.Size(75, 23);

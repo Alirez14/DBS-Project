@@ -75,6 +75,7 @@
             // 
             // NiderAdd
             // 
+            this.NiderAdd.Enabled = false;
             this.NiderAdd.Location = new System.Drawing.Point(678, 256);
             this.NiderAdd.Name = "NiderAdd";
             this.NiderAdd.Size = new System.Drawing.Size(75, 23);
@@ -89,6 +90,7 @@
             this.NiderOrt.Name = "NiderOrt";
             this.NiderOrt.Size = new System.Drawing.Size(156, 20);
             this.NiderOrt.TabIndex = 2;
+            this.NiderOrt.TextChanged += new System.EventHandler(this.NiderOrt_TextChanged);
             // 
             // NiderEmail
             // 
@@ -133,6 +135,7 @@
             // 
             // SAVE
             // 
+            this.SAVE.Enabled = false;
             this.SAVE.Location = new System.Drawing.Point(678, 401);
             this.SAVE.Name = "SAVE";
             this.SAVE.Size = new System.Drawing.Size(75, 23);
@@ -143,6 +146,7 @@
             // 
             // UPDATE
             // 
+            this.UPDATE.Enabled = false;
             this.UPDATE.Location = new System.Drawing.Point(678, 372);
             this.UPDATE.Name = "UPDATE";
             this.UPDATE.Size = new System.Drawing.Size(75, 23);
@@ -157,6 +161,7 @@
             this.NiderID.Name = "NiderID";
             this.NiderID.Size = new System.Drawing.Size(156, 20);
             this.NiderID.TabIndex = 10;
+            this.NiderID.TextChanged += new System.EventHandler(this.NiderID_TextChanged);
             // 
             // label4
             // 

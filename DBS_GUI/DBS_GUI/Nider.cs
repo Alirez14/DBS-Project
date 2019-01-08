@@ -18,6 +18,7 @@ namespace DBS_GUI
             dataGridView1.DataSource = db.Niederlassungs;
 
         }
+        private bool updatemode = false;
         public void cleartextbox()
         {
             NiderOrt.Clear();
@@ -77,8 +78,11 @@ namespace DBS_GUI
 
         private void UPDATEBTN(object sender, EventArgs e)
         {
+            SAVE.Enabled = true;
+            updatemode = true;
             try
             {
+
                 using (DataClasses1DataContext db = new DataClasses1DataContext())
                 {
                     var newab = db.Niederlassungs.SingleOrDefault<Niederlassung>(x => x.PK_FirmaID == Convert.ToInt32(NiderID.Text));
@@ -100,8 +104,11 @@ namespace DBS_GUI
 
         private void SAVEBTN(object sender, EventArgs e)
         {
+            updatemode = false;
+            SAVE.Enabled = false;
             try
             {
+              
                 using (DataClasses1DataContext db = new DataClasses1DataContext())
                 {
                     var newab = db.Niederlassungs.SingleOrDefault<Niederlassung>(x => x.PK_FirmaID == Convert.ToInt32(NiderID.Text));
@@ -134,6 +141,34 @@ namespace DBS_GUI
                 MessageBox.Show(error.Message);
 
 
+            }
+
+        }
+
+        private void NiderOrt_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(NiderOrt.Text))
+            {
+                NiderAdd.Enabled = false;
+            }
+            else
+            {
+                if (updatemode == false)
+                {
+                    NiderAdd.Enabled = true;
+                }
+            }
+        }
+
+        private void NiderID_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(NiderID.Text))
+            {
+                UPDATE.Enabled = false;
+            }
+            else
+            {
+                UPDATE.Enabled = true;
             }
 
         }

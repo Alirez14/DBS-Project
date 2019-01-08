@@ -18,6 +18,7 @@ public partial class Abteillung : Form
         dataGridView1.DataSource = db.Abteilungs;
 
     }
+        private bool updatemode = false;
         public void cleartextbox()
         {
             nameab.Clear();
@@ -78,6 +79,8 @@ public partial class Abteillung : Form
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
+            Savebtn.Enabled = true;
+            updatemode = true;
             try
             {
                 using (DataClasses1DataContext db = new DataClasses1DataContext())
@@ -89,13 +92,13 @@ public partial class Abteillung : Form
                     Telefonab.Text = newab.Telefon;
 
 
+                   
 
 
-
-
-
+                    
 
                 }
+                
             }
             catch (Exception error)
             {
@@ -107,6 +110,8 @@ public partial class Abteillung : Form
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
+            Savebtn.Enabled = false;
+            updatemode = false;
             try
             {
                 using (DataClasses1DataContext db = new DataClasses1DataContext())
@@ -130,12 +135,13 @@ public partial class Abteillung : Form
 
                    
                     db.SubmitChanges();
-                    getdata();
-                    cleartextbox();
-
+                    
 
 
                 }
+                getdata();
+                cleartextbox();
+                
             }
             catch (Exception error)
             {
@@ -144,6 +150,37 @@ public partial class Abteillung : Form
                 
             }
 
+        }
+
+        private void nameab_TextChanged(object sender, EventArgs e)
+        {
+
+           
+            if (string.IsNullOrEmpty(nameab.Text))
+            {
+                ADDbtn.Enabled = false;
+            }
+            else
+            {
+                if (updatemode == false)
+                {
+                    ADDbtn.Enabled = true;
+                }
+            }
+        }
+
+        private void IDFinder_TextChanged(object sender, EventArgs e)
+        {
+
+
+            if (string.IsNullOrEmpty(IDFinder.Text))
+            {
+                updatebtn.Enabled = false;
+            }
+            else
+            {
+                updatebtn.Enabled = true;
+            }
         }
     }
 }

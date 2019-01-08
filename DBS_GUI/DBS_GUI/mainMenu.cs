@@ -115,7 +115,5 @@ namespace DBS_GUI {
                 connection.Close();
             }
         }
-
-
     }
 }
