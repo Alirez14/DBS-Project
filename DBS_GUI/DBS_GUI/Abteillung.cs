@@ -38,7 +38,7 @@ public partial class Abteillung : Form
 
     private void Abteillung_Load(object sender, EventArgs e)
     {
-            DataClasses1DataContext db = new DataClasses1DataContext();
+            
             getdata();
             
 
