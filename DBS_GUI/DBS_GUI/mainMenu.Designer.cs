@@ -52,13 +52,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtAbteilung = new System.Windows.Forms.TextBox();
             this.btnEditAbteilung = new System.Windows.Forms.Button();
             this.btnViewAbteilung = new System.Windows.Forms.Button();
             this.btnCreateAbteilung = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtNiederlassung = new System.Windows.Forms.TextBox();
             this.btnEditNiederlassung = new System.Windows.Forms.Button();
             this.btnViewNiederlassungen = new System.Windows.Forms.Button();
             this.btnCreateNiederlassung = new System.Windows.Forms.Button();
@@ -66,10 +64,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtProjekt = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtKunde = new System.Windows.Forms.TextBox();
             this.btnCreateKunde = new System.Windows.Forms.Button();
             this.btnViewKunden = new System.Windows.Forms.Button();
             this.btnEditKunde = new System.Windows.Forms.Button();
@@ -78,6 +74,10 @@
             this.btnCreateBestellung = new System.Windows.Forms.Button();
             this.btnRaiseTestError = new System.Windows.Forms.Button();
             this.AngestelltenID = new System.Windows.Forms.NumericUpDown();
+            this.NiederlassungsID = new System.Windows.Forms.NumericUpDown();
+            this.AbteilungID = new System.Windows.Forms.NumericUpDown();
+            this.ProjektID = new System.Windows.Forms.NumericUpDown();
+            this.KundenID = new System.Windows.Forms.NumericUpDown();
             this.groupSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unternehmDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -88,6 +88,10 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AngestelltenID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NiederlassungsID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AbteilungID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjektID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KundenID)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,7 +107,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(608, 664);
+            this.btnExit.Location = new System.Drawing.Point(608, 624);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(89, 31);
             this.btnExit.TabIndex = 3;
@@ -133,9 +137,9 @@
             // 
             // btnShowProjects
             // 
-            this.btnShowProjects.Location = new System.Drawing.Point(153, 26);
+            this.btnShowProjects.Location = new System.Drawing.Point(135, 26);
             this.btnShowProjects.Name = "btnShowProjects";
-            this.btnShowProjects.Size = new System.Drawing.Size(105, 29);
+            this.btnShowProjects.Size = new System.Drawing.Size(125, 29);
             this.btnShowProjects.TabIndex = 6;
             this.btnShowProjects.Text = "Anzeigen";
             this.btnShowProjects.UseVisualStyleBackColor = true;
@@ -143,9 +147,9 @@
             // 
             // btnCreateProject
             // 
-            this.btnCreateProject.Location = new System.Drawing.Point(89, 26);
+            this.btnCreateProject.Location = new System.Drawing.Point(12, 26);
             this.btnCreateProject.Name = "btnCreateProject";
-            this.btnCreateProject.Size = new System.Drawing.Size(58, 29);
+            this.btnCreateProject.Size = new System.Drawing.Size(111, 29);
             this.btnCreateProject.TabIndex = 5;
             this.btnCreateProject.Text = "Neu";
             this.btnCreateProject.UseVisualStyleBackColor = true;
@@ -163,9 +167,9 @@
             // 
             // btnEditProjekt
             // 
-            this.btnEditProjekt.Location = new System.Drawing.Point(89, 110);
+            this.btnEditProjekt.Location = new System.Drawing.Point(135, 74);
             this.btnEditProjekt.Name = "btnEditProjekt";
-            this.btnEditProjekt.Size = new System.Drawing.Size(169, 29);
+            this.btnEditProjekt.Size = new System.Drawing.Size(125, 29);
             this.btnEditProjekt.TabIndex = 10;
             this.btnEditProjekt.Text = "Bearbeiten";
             this.btnEditProjekt.UseVisualStyleBackColor = true;
@@ -296,21 +300,21 @@
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Location = new System.Drawing.Point(12, 259);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 399);
+            this.groupBox1.Size = new System.Drawing.Size(385, 361);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Firma";
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.AbteilungID);
             this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Controls.Add(this.txtAbteilung);
             this.groupBox7.Controls.Add(this.btnEditAbteilung);
             this.groupBox7.Controls.Add(this.btnViewAbteilung);
             this.groupBox7.Controls.Add(this.btnCreateAbteilung);
-            this.groupBox7.Location = new System.Drawing.Point(9, 217);
+            this.groupBox7.Location = new System.Drawing.Point(33, 190);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(363, 150);
+            this.groupBox7.Size = new System.Drawing.Size(321, 127);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Abteilungen";
@@ -318,24 +322,17 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 73);
+            this.label9.Location = new System.Drawing.Point(20, 77);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 19);
+            this.label9.Size = new System.Drawing.Size(31, 19);
             this.label9.TabIndex = 23;
-            this.label9.Text = "Name:";
-            // 
-            // txtAbteilung
-            // 
-            this.txtAbteilung.Location = new System.Drawing.Point(82, 71);
-            this.txtAbteilung.Name = "txtAbteilung";
-            this.txtAbteilung.Size = new System.Drawing.Size(253, 27);
-            this.txtAbteilung.TabIndex = 24;
+            this.label9.Text = "ID:";
             // 
             // btnEditAbteilung
             // 
-            this.btnEditAbteilung.Location = new System.Drawing.Point(82, 104);
+            this.btnEditAbteilung.Location = new System.Drawing.Point(180, 72);
             this.btnEditAbteilung.Name = "btnEditAbteilung";
-            this.btnEditAbteilung.Size = new System.Drawing.Size(116, 29);
+            this.btnEditAbteilung.Size = new System.Drawing.Size(124, 29);
             this.btnEditAbteilung.TabIndex = 22;
             this.btnEditAbteilung.Text = "Bearbeiten";
             this.btnEditAbteilung.UseVisualStyleBackColor = true;
@@ -343,7 +340,7 @@
             // 
             // btnViewAbteilung
             // 
-            this.btnViewAbteilung.Location = new System.Drawing.Point(211, 26);
+            this.btnViewAbteilung.Location = new System.Drawing.Point(180, 28);
             this.btnViewAbteilung.Name = "btnViewAbteilung";
             this.btnViewAbteilung.Size = new System.Drawing.Size(124, 29);
             this.btnViewAbteilung.TabIndex = 21;
@@ -353,9 +350,9 @@
             // 
             // btnCreateAbteilung
             // 
-            this.btnCreateAbteilung.Location = new System.Drawing.Point(82, 26);
+            this.btnCreateAbteilung.Location = new System.Drawing.Point(24, 28);
             this.btnCreateAbteilung.Name = "btnCreateAbteilung";
-            this.btnCreateAbteilung.Size = new System.Drawing.Size(58, 29);
+            this.btnCreateAbteilung.Size = new System.Drawing.Size(146, 29);
             this.btnCreateAbteilung.TabIndex = 20;
             this.btnCreateAbteilung.Text = "Neu";
             this.btnCreateAbteilung.UseVisualStyleBackColor = true;
@@ -363,14 +360,14 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.NiederlassungsID);
             this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.txtNiederlassung);
             this.groupBox6.Controls.Add(this.btnEditNiederlassung);
             this.groupBox6.Controls.Add(this.btnViewNiederlassungen);
             this.groupBox6.Controls.Add(this.btnCreateNiederlassung);
-            this.groupBox6.Location = new System.Drawing.Point(9, 40);
+            this.groupBox6.Location = new System.Drawing.Point(33, 39);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(363, 147);
+            this.groupBox6.Size = new System.Drawing.Size(321, 115);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Niederlassungen";
@@ -380,22 +377,15 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(20, 73);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 19);
+            this.label8.Size = new System.Drawing.Size(31, 19);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Name:";
-            // 
-            // txtNiederlassung
-            // 
-            this.txtNiederlassung.Location = new System.Drawing.Point(82, 71);
-            this.txtNiederlassung.Name = "txtNiederlassung";
-            this.txtNiederlassung.Size = new System.Drawing.Size(253, 27);
-            this.txtNiederlassung.TabIndex = 19;
+            this.label8.Text = "ID:";
             // 
             // btnEditNiederlassung
             // 
-            this.btnEditNiederlassung.Location = new System.Drawing.Point(82, 104);
+            this.btnEditNiederlassung.Location = new System.Drawing.Point(178, 69);
             this.btnEditNiederlassung.Name = "btnEditNiederlassung";
-            this.btnEditNiederlassung.Size = new System.Drawing.Size(116, 29);
+            this.btnEditNiederlassung.Size = new System.Drawing.Size(126, 29);
             this.btnEditNiederlassung.TabIndex = 17;
             this.btnEditNiederlassung.Text = "Bearbeiten";
             this.btnEditNiederlassung.UseVisualStyleBackColor = true;
@@ -403,7 +393,7 @@
             // 
             // btnViewNiederlassungen
             // 
-            this.btnViewNiederlassungen.Location = new System.Drawing.Point(211, 26);
+            this.btnViewNiederlassungen.Location = new System.Drawing.Point(180, 26);
             this.btnViewNiederlassungen.Name = "btnViewNiederlassungen";
             this.btnViewNiederlassungen.Size = new System.Drawing.Size(124, 29);
             this.btnViewNiederlassungen.TabIndex = 1;
@@ -413,9 +403,9 @@
             // 
             // btnCreateNiederlassung
             // 
-            this.btnCreateNiederlassung.Location = new System.Drawing.Point(82, 26);
+            this.btnCreateNiederlassung.Location = new System.Drawing.Point(24, 26);
             this.btnCreateNiederlassung.Name = "btnCreateNiederlassung";
-            this.btnCreateNiederlassung.Size = new System.Drawing.Size(58, 29);
+            this.btnCreateNiederlassung.Size = new System.Drawing.Size(146, 29);
             this.btnCreateNiederlassung.TabIndex = 0;
             this.btnCreateNiederlassung.Text = "Neu";
             this.btnCreateNiederlassung.UseVisualStyleBackColor = true;
@@ -446,14 +436,14 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ProjektID);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.txtProjekt);
             this.groupBox3.Controls.Add(this.btnCreateProject);
             this.groupBox3.Controls.Add(this.btnShowProjects);
             this.groupBox3.Controls.Add(this.btnEditProjekt);
             this.groupBox3.Location = new System.Drawing.Point(421, 259);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(274, 155);
+            this.groupBox3.Size = new System.Drawing.Size(274, 114);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Projekte";
@@ -461,29 +451,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 79);
+            this.label3.Location = new System.Drawing.Point(14, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 19);
+            this.label3.Size = new System.Drawing.Size(31, 19);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Name:";
-            // 
-            // txtProjekt
-            // 
-            this.txtProjekt.Location = new System.Drawing.Point(89, 77);
-            this.txtProjekt.Name = "txtProjekt";
-            this.txtProjekt.Size = new System.Drawing.Size(169, 27);
-            this.txtProjekt.TabIndex = 16;
+            this.label3.Text = "ID:";
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.KundenID);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.txtKunde);
             this.groupBox4.Controls.Add(this.btnCreateKunde);
             this.groupBox4.Controls.Add(this.btnViewKunden);
             this.groupBox4.Controls.Add(this.btnEditKunde);
             this.groupBox4.Location = new System.Drawing.Point(421, 504);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(276, 154);
+            this.groupBox4.Size = new System.Drawing.Size(276, 116);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kunden";
@@ -491,24 +474,17 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 80);
+            this.label10.Location = new System.Drawing.Point(14, 74);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 19);
+            this.label10.Size = new System.Drawing.Size(31, 19);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Name:";
-            // 
-            // txtKunde
-            // 
-            this.txtKunde.Location = new System.Drawing.Point(89, 77);
-            this.txtKunde.Name = "txtKunde";
-            this.txtKunde.Size = new System.Drawing.Size(169, 27);
-            this.txtKunde.TabIndex = 21;
+            this.label10.Text = "ID:";
             // 
             // btnCreateKunde
             // 
-            this.btnCreateKunde.Location = new System.Drawing.Point(89, 26);
+            this.btnCreateKunde.Location = new System.Drawing.Point(18, 26);
             this.btnCreateKunde.Name = "btnCreateKunde";
-            this.btnCreateKunde.Size = new System.Drawing.Size(58, 29);
+            this.btnCreateKunde.Size = new System.Drawing.Size(105, 29);
             this.btnCreateKunde.TabIndex = 17;
             this.btnCreateKunde.Text = "Neu";
             this.btnCreateKunde.UseVisualStyleBackColor = true;
@@ -516,9 +492,9 @@
             // 
             // btnViewKunden
             // 
-            this.btnViewKunden.Location = new System.Drawing.Point(153, 26);
+            this.btnViewKunden.Location = new System.Drawing.Point(135, 26);
             this.btnViewKunden.Name = "btnViewKunden";
-            this.btnViewKunden.Size = new System.Drawing.Size(105, 29);
+            this.btnViewKunden.Size = new System.Drawing.Size(125, 29);
             this.btnViewKunden.TabIndex = 18;
             this.btnViewKunden.Text = "Anzeigen";
             this.btnViewKunden.UseVisualStyleBackColor = true;
@@ -526,9 +502,9 @@
             // 
             // btnEditKunde
             // 
-            this.btnEditKunde.Location = new System.Drawing.Point(89, 110);
+            this.btnEditKunde.Location = new System.Drawing.Point(135, 69);
             this.btnEditKunde.Name = "btnEditKunde";
-            this.btnEditKunde.Size = new System.Drawing.Size(169, 29);
+            this.btnEditKunde.Size = new System.Drawing.Size(125, 29);
             this.btnEditKunde.TabIndex = 19;
             this.btnEditKunde.Text = "Bearbeiten";
             this.btnEditKunde.UseVisualStyleBackColor = true;
@@ -538,7 +514,7 @@
             // 
             this.groupBox5.Controls.Add(this.btnViewBestellungen);
             this.groupBox5.Controls.Add(this.btnCreateBestellung);
-            this.groupBox5.Location = new System.Drawing.Point(421, 424);
+            this.groupBox5.Location = new System.Drawing.Point(423, 403);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(274, 74);
             this.groupBox5.TabIndex = 23;
@@ -567,7 +543,7 @@
             // 
             // btnRaiseTestError
             // 
-            this.btnRaiseTestError.Location = new System.Drawing.Point(12, 666);
+            this.btnRaiseTestError.Location = new System.Drawing.Point(12, 626);
             this.btnRaiseTestError.Name = "btnRaiseTestError";
             this.btnRaiseTestError.Size = new System.Drawing.Size(224, 29);
             this.btnRaiseTestError.TabIndex = 24;
@@ -582,11 +558,39 @@
             this.AngestelltenID.Size = new System.Drawing.Size(72, 27);
             this.AngestelltenID.TabIndex = 25;
             // 
+            // NiederlassungsID
+            // 
+            this.NiederlassungsID.Location = new System.Drawing.Point(57, 71);
+            this.NiederlassungsID.Name = "NiederlassungsID";
+            this.NiederlassungsID.Size = new System.Drawing.Size(113, 27);
+            this.NiederlassungsID.TabIndex = 20;
+            // 
+            // AbteilungID
+            // 
+            this.AbteilungID.Location = new System.Drawing.Point(57, 75);
+            this.AbteilungID.Name = "AbteilungID";
+            this.AbteilungID.Size = new System.Drawing.Size(113, 27);
+            this.AbteilungID.TabIndex = 24;
+            // 
+            // ProjektID
+            // 
+            this.ProjektID.Location = new System.Drawing.Point(51, 77);
+            this.ProjektID.Name = "ProjektID";
+            this.ProjektID.Size = new System.Drawing.Size(72, 27);
+            this.ProjektID.TabIndex = 16;
+            // 
+            // KundenID
+            // 
+            this.KundenID.Location = new System.Drawing.Point(51, 72);
+            this.KundenID.Name = "KundenID";
+            this.KundenID.Size = new System.Drawing.Size(72, 27);
+            this.KundenID.TabIndex = 21;
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 706);
+            this.ClientSize = new System.Drawing.Size(709, 665);
             this.Controls.Add(this.btnRaiseTestError);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -620,6 +624,10 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AngestelltenID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NiederlassungsID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AbteilungID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjektID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KundenID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -658,25 +666,25 @@
         private System.Windows.Forms.Button btnViewBestellungen;
         private System.Windows.Forms.Button btnCreateBestellung;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtProjekt;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtKunde;
         private System.Windows.Forms.Button btnCreateKunde;
         private System.Windows.Forms.Button btnViewKunden;
         private System.Windows.Forms.Button btnEditKunde;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtAbteilung;
         private System.Windows.Forms.Button btnEditAbteilung;
         private System.Windows.Forms.Button btnViewAbteilung;
         private System.Windows.Forms.Button btnCreateAbteilung;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNiederlassung;
         private System.Windows.Forms.Button btnEditNiederlassung;
         private System.Windows.Forms.Button btnViewNiederlassungen;
         private System.Windows.Forms.Button btnCreateNiederlassung;
         private System.Windows.Forms.Button btnRaiseTestError;
         private System.Windows.Forms.NumericUpDown AngestelltenID;
+        private System.Windows.Forms.NumericUpDown AbteilungID;
+        private System.Windows.Forms.NumericUpDown NiederlassungsID;
+        private System.Windows.Forms.NumericUpDown ProjektID;
+        private System.Windows.Forms.NumericUpDown KundenID;
     }
 }

@@ -76,7 +76,7 @@ namespace DBS_GUI {
         }
 
         private void btnEditProjekt_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Projekt: " + txtProjekt.Text);
+            MessageBox.Show("Edit Projekt: " + (Int32)ProjektID.Value);
         }
 
         private void btnCreateBestellung_Click(object sender, EventArgs e) {
@@ -96,7 +96,7 @@ namespace DBS_GUI {
         }
 
         private void btnEditKunde_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Kunden: " + txtKunde.Text);
+            MessageBox.Show("Edit Kunden: " + (Int32)KundenID.Value);
         }
 
         private void btnCreateNiederlassung_Click(object sender, EventArgs e) {
@@ -110,7 +110,7 @@ namespace DBS_GUI {
         }
 
         private void btnEditNiederlassung_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Niederlassung: " + txtNiederlassung.Text);
+            MessageBox.Show("Edit Niederlassung: " + (Int32)NiederlassungsID.Value);
         }
 
         private void btnCreateAbteilung_Click(object sender, EventArgs e) {
@@ -124,7 +124,7 @@ namespace DBS_GUI {
         }
 
         private void btnEditAbteilung_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Abteilung: " + txtAbteilung.Text);
+            MessageBox.Show("Edit Abteilung: " + (Int32)AbteilungID.Value);
         }
 
         private void btnExit_Click(object sender, EventArgs e) {
