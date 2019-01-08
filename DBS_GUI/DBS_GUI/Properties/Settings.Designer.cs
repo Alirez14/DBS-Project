@@ -26,7 +26,7 @@ namespace DBS_GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\\SQLEXPRESS;Initial Catalog=Unternehm;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARKUS\\SQLEXPRESS;Initial Catalog=Unternehm;Integrated Security=True")]
         public string UnternehmConnectionString {
             get {
                 return ((string)(this["UnternehmConnectionString"]));
@@ -36,8 +36,8 @@ namespace DBS_GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\\SQLEXPRESS;Initial Catalog=Unternehm;Integrated Security=" +
-            "True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\\SQLEXPRESS;Initial Catalog=Unternehm;Integrated Security=True" +
+            "")]
         public string UnternehmConnectionString1 {
             get {
                 return ((string)(this["UnternehmConnectionString1"]));

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Unternehm" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ALIREZ-ACER\SQLEXPRESS;Initial Catalog=Unternehm;Integrated Security=True" SettingsObjectName="DBS_GUI.Properties.Settings" SettingsPropertyName="UnternehmConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=Unternehm;Integrated Security=True" SettingsObjectName="DBS_GUI.Properties.Settings" SettingsPropertyName="UnternehmConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Abteilung" Member="Abteilungs">
     <Type Name="Abteilung">
       <Column Name="PK_Abt_nr" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
