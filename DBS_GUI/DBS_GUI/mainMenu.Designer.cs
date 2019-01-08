@@ -77,7 +77,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 19);
+            this.label1.Size = new System.Drawing.Size(244, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Unternehmen Datenbank";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,7 +176,7 @@
             this.isWindowsAuthenticated.AutoSize = true;
             this.isWindowsAuthenticated.Location = new System.Drawing.Point(149, 77);
             this.isWindowsAuthenticated.Name = "isWindowsAuthenticated";
-            this.isWindowsAuthenticated.Size = new System.Drawing.Size(191, 20);
+            this.isWindowsAuthenticated.Size = new System.Drawing.Size(224, 23);
             this.isWindowsAuthenticated.TabIndex = 10;
             this.isWindowsAuthenticated.Text = "Windows Authentifizierung";
             this.isWindowsAuthenticated.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(149, 134);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(170, 23);
+            this.txtPassword.Size = new System.Drawing.Size(170, 27);
             this.txtPassword.TabIndex = 9;
             // 
             // label7
@@ -194,7 +194,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 137);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 16);
+            this.label7.Size = new System.Drawing.Size(80, 19);
             this.label7.TabIndex = 8;
             this.label7.Text = "Passwort:";
             // 
@@ -202,7 +202,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(149, 105);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(170, 23);
+            this.txtUsername.Size = new System.Drawing.Size(170, 27);
             this.txtUsername.TabIndex = 7;
             // 
             // label6
@@ -210,7 +210,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 108);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 16);
+            this.label6.Size = new System.Drawing.Size(119, 19);
             this.label6.TabIndex = 6;
             this.label6.Text = "Benutzername:";
             // 
@@ -218,7 +218,7 @@
             // 
             this.txtDatabase.Location = new System.Drawing.Point(149, 48);
             this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Size = new System.Drawing.Size(224, 23);
+            this.txtDatabase.Size = new System.Drawing.Size(224, 27);
             this.txtDatabase.TabIndex = 3;
             // 
             // label5
@@ -226,7 +226,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 56);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 16);
+            this.label5.Size = new System.Drawing.Size(92, 19);
             this.label5.TabIndex = 2;
             this.label5.Text = "Datenbank:";
             // 
@@ -234,7 +234,7 @@
             // 
             this.txtDBServer.Location = new System.Drawing.Point(149, 19);
             this.txtDBServer.Name = "txtDBServer";
-            this.txtDBServer.Size = new System.Drawing.Size(224, 23);
+            this.txtDBServer.Size = new System.Drawing.Size(224, 27);
             this.txtDBServer.TabIndex = 1;
             // 
             // label4
@@ -242,7 +242,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 16);
+            this.label4.Size = new System.Drawing.Size(137, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Datenbankserver:";
             // 
@@ -320,7 +320,7 @@
             // 
             this.AngestelltenID.Location = new System.Drawing.Point(49, 74);
             this.AngestelltenID.Name = "AngestelltenID";
-            this.AngestelltenID.Size = new System.Drawing.Size(72, 23);
+            this.AngestelltenID.Size = new System.Drawing.Size(72, 27);
             this.AngestelltenID.TabIndex = 25;
             // 
             // label2
@@ -328,7 +328,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 16);
+            this.label2.Size = new System.Drawing.Size(31, 19);
             this.label2.TabIndex = 12;
             this.label2.Text = "ID:";
             // 
@@ -374,9 +374,9 @@
             // 
             // mainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 591);
+            this.ClientSize = new System.Drawing.Size(711, 591);
             this.Controls.Add(this.btnRaiseTestError);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
