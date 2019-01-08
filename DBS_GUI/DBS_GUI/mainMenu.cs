@@ -57,7 +57,9 @@ namespace DBS_GUI {
         }
 
         private void btnEditAngestellten_Click(object sender, EventArgs e) {
-            MessageBox.Show("Edit Angestellten: " + txtAngestellten.Text);
+            // MessageBox.Show("Edit Angestellten: " + (int)AngestelltenID.Value);
+            editAngestellten form = new editAngestellten(connection, (int)AngestelltenID.Value);
+            form.ShowDialog();
         }
 
         private void btnProjektteilnehmer_Click(object sender, EventArgs e) {
@@ -148,6 +150,5 @@ namespace DBS_GUI {
                 connection.Close();
             }
         }
-
     }
 }

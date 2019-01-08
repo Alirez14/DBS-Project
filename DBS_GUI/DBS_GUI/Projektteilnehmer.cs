@@ -48,6 +48,7 @@ namespace DBS_GUI {
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Name", SqlDbType.VarChar).Value = filter;
+            cmd.Parameters.AddWithValue("@active", SqlDbType.Int).Value = 0;
 
             SqlDataReader reader = cmd.ExecuteReader();
             dt.Load(reader);

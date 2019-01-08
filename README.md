@@ -30,9 +30,9 @@ mainMenu                        Markus                   100%
 
 viewAngestellte                 Markus                   100%
 addAngestellte                  Markus                   100%
-updateAngestellte               Markus                     0%
+updateAngestellte               Markus                   100%
 
-Projektteilnehmer               Markus                    10%
+Projektteilnehmer               Markus                     0%
 
 viewAbteilung                   Alireza                  100%
 addAbteilung                    Alireza                  100%
@@ -74,7 +74,7 @@ deactivateKunde                 Sina                     100%
 #### Ervin, Markus Koller
 
 #### Fortschritt:
-* 6 Stored Procedures (test error, Angestellte, Projekte)   100%
+* 8 Stored Procedures (test error, Angestellte, Projekte)   100%
 * 1 View (showAngestellteNicely)                            100%
 * einen Test user erstellt (user="maxi" pwd="1234")         100%
 

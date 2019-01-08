@@ -16,17 +16,27 @@ namespace DBS_GUI {
         }
 
         private void listAngestellte_Load(object sender, EventArgs e) {
-            dataviewAngestellte.DataSource = getAngestellte();
-            dataviewAngestellte.Columns[0].Visible = false;     // don't show id column!
+            dataviewAngestellte.DataSource = getAngestellte(0);    // default are only active Angestellte shown!
+            // dataviewAngestellte.Columns[0].Visible = false;     // don't show id column!
         }
 
-        private DataTable getAngestellte () {
+        private void btnRefresh_Click(object sender, EventArgs e) {
+            if (showDeactivated.Checked) {
+                dataviewAngestellte.DataSource = getAngestellte(1);
+            }
+            else {
+                dataviewAngestellte.DataSource = getAngestellte(0);
+            }
+        }
+
+        private DataTable getAngestellte(int active) {
             DataTable dt = new DataTable();
 
             connection.Open();
             SqlCommand cmd = new SqlCommand("uspGetAngestellteFilteredNicely", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Name", SqlDbType.VarChar).Value = "";
+            cmd.Parameters.AddWithValue("@active", SqlDbType.Int).Value = active;
             SqlDataReader reader = cmd.ExecuteReader();
             dt.Load(reader);
             connection.Close();

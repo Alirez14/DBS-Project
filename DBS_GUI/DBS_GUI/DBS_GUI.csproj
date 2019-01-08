@@ -62,6 +62,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="editAngestellten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editAngestellten.Designer.cs">
+      <DependentUpon>editAngestellten.cs</DependentUpon>
+    </Compile>
     <Compile Include="newAngestellten.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="Abteillung.resx">
       <DependentUpon>Abteillung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editAngestellten.resx">
+      <DependentUpon>editAngestellten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newAngestellten.resx">
       <DependentUpon>newAngestellten.cs</DependentUpon>

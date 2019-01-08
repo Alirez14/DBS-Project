@@ -50,43 +50,44 @@
             this.label4 = new System.Windows.Forms.Label();
             this.unternehmDataSet1 = new DBS_GUI.UnternehmDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnCreateBestellung = new System.Windows.Forms.Button();
-            this.btnViewBestellungen = new System.Windows.Forms.Button();
-            this.txtAngestellten = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtProjekt = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtKunde = new System.Windows.Forms.TextBox();
-            this.btnCreateKunde = new System.Windows.Forms.Button();
-            this.btnViewKunden = new System.Windows.Forms.Button();
-            this.btnEditKunde = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btnCreateNiederlassung = new System.Windows.Forms.Button();
-            this.btnViewNiederlassungen = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtNiederlassung = new System.Windows.Forms.TextBox();
-            this.btnEditNiederlassung = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtAbteilung = new System.Windows.Forms.TextBox();
             this.btnEditAbteilung = new System.Windows.Forms.Button();
             this.btnViewAbteilung = new System.Windows.Forms.Button();
             this.btnCreateAbteilung = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNiederlassung = new System.Windows.Forms.TextBox();
+            this.btnEditNiederlassung = new System.Windows.Forms.Button();
+            this.btnViewNiederlassungen = new System.Windows.Forms.Button();
+            this.btnCreateNiederlassung = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtProjekt = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtKunde = new System.Windows.Forms.TextBox();
+            this.btnCreateKunde = new System.Windows.Forms.Button();
+            this.btnViewKunden = new System.Windows.Forms.Button();
+            this.btnEditKunde = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnViewBestellungen = new System.Windows.Forms.Button();
+            this.btnCreateBestellung = new System.Windows.Forms.Button();
             this.btnRaiseTestError = new System.Windows.Forms.Button();
+            this.AngestelltenID = new System.Windows.Forms.NumericUpDown();
             this.groupSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unternehmDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AngestelltenID)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -112,9 +113,9 @@
             // 
             // btnNewAngestellter
             // 
-            this.btnNewAngestellter.Location = new System.Drawing.Point(89, 27);
+            this.btnNewAngestellter.Location = new System.Drawing.Point(10, 27);
             this.btnNewAngestellter.Name = "btnNewAngestellter";
-            this.btnNewAngestellter.Size = new System.Drawing.Size(58, 29);
+            this.btnNewAngestellter.Size = new System.Drawing.Size(111, 29);
             this.btnNewAngestellter.TabIndex = 1;
             this.btnNewAngestellter.Text = "Neu";
             this.btnNewAngestellter.UseVisualStyleBackColor = true;
@@ -122,9 +123,9 @@
             // 
             // btnViewAngestellte
             // 
-            this.btnViewAngestellte.Location = new System.Drawing.Point(153, 27);
+            this.btnViewAngestellte.Location = new System.Drawing.Point(133, 27);
             this.btnViewAngestellte.Name = "btnViewAngestellte";
-            this.btnViewAngestellte.Size = new System.Drawing.Size(105, 29);
+            this.btnViewAngestellte.Size = new System.Drawing.Size(125, 29);
             this.btnViewAngestellte.TabIndex = 2;
             this.btnViewAngestellte.Text = "Anzeigen";
             this.btnViewAngestellte.UseVisualStyleBackColor = true;
@@ -152,9 +153,9 @@
             // 
             // btnProjektteilnehmer
             // 
-            this.btnProjektteilnehmer.Location = new System.Drawing.Point(421, 215);
+            this.btnProjektteilnehmer.Location = new System.Drawing.Point(421, 182);
             this.btnProjektteilnehmer.Name = "btnProjektteilnehmer";
-            this.btnProjektteilnehmer.Size = new System.Drawing.Size(274, 29);
+            this.btnProjektteilnehmer.Size = new System.Drawing.Size(274, 71);
             this.btnProjektteilnehmer.TabIndex = 7;
             this.btnProjektteilnehmer.Text = "Projektteilnehmer";
             this.btnProjektteilnehmer.UseVisualStyleBackColor = true;
@@ -172,9 +173,9 @@
             // 
             // btnEditAngestellten
             // 
-            this.btnEditAngestellten.Location = new System.Drawing.Point(89, 108);
+            this.btnEditAngestellten.Location = new System.Drawing.Point(133, 71);
             this.btnEditAngestellten.Name = "btnEditAngestellten";
-            this.btnEditAngestellten.Size = new System.Drawing.Size(169, 29);
+            this.btnEditAngestellten.Size = new System.Drawing.Size(125, 29);
             this.btnEditAngestellten.TabIndex = 12;
             this.btnEditAngestellten.Text = "Bearbeiten";
             this.btnEditAngestellten.UseVisualStyleBackColor = true;
@@ -300,171 +301,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Firma";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtAngestellten);
-            this.groupBox2.Controls.Add(this.btnNewAngestellter);
-            this.groupBox2.Controls.Add(this.btnViewAngestellte);
-            this.groupBox2.Controls.Add(this.btnEditAngestellten);
-            this.groupBox2.Location = new System.Drawing.Point(421, 52);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(274, 148);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Angestellten";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.txtProjekt);
-            this.groupBox3.Controls.Add(this.btnCreateProject);
-            this.groupBox3.Controls.Add(this.btnShowProjects);
-            this.groupBox3.Controls.Add(this.btnEditProjekt);
-            this.groupBox3.Location = new System.Drawing.Point(421, 259);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(274, 155);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Projekte";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.txtKunde);
-            this.groupBox4.Controls.Add(this.btnCreateKunde);
-            this.groupBox4.Controls.Add(this.btnViewKunden);
-            this.groupBox4.Controls.Add(this.btnEditKunde);
-            this.groupBox4.Location = new System.Drawing.Point(421, 504);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(276, 154);
-            this.groupBox4.TabIndex = 22;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Kunden";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.btnViewBestellungen);
-            this.groupBox5.Controls.Add(this.btnCreateBestellung);
-            this.groupBox5.Location = new System.Drawing.Point(421, 424);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(274, 74);
-            this.groupBox5.TabIndex = 23;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Bestellungen";
-            // 
-            // btnCreateBestellung
-            // 
-            this.btnCreateBestellung.Location = new System.Drawing.Point(31, 25);
-            this.btnCreateBestellung.Name = "btnCreateBestellung";
-            this.btnCreateBestellung.Size = new System.Drawing.Size(116, 33);
-            this.btnCreateBestellung.TabIndex = 0;
-            this.btnCreateBestellung.Text = "Erstellen";
-            this.btnCreateBestellung.UseVisualStyleBackColor = true;
-            this.btnCreateBestellung.Click += new System.EventHandler(this.btnCreateBestellung_Click);
-            // 
-            // btnViewBestellungen
-            // 
-            this.btnViewBestellungen.Location = new System.Drawing.Point(153, 26);
-            this.btnViewBestellungen.Name = "btnViewBestellungen";
-            this.btnViewBestellungen.Size = new System.Drawing.Size(105, 32);
-            this.btnViewBestellungen.TabIndex = 1;
-            this.btnViewBestellungen.Text = "Anzeigen";
-            this.btnViewBestellungen.UseVisualStyleBackColor = true;
-            this.btnViewBestellungen.Click += new System.EventHandler(this.btnViewBestellungen_Click);
-            // 
-            // txtAngestellten
-            // 
-            this.txtAngestellten.Location = new System.Drawing.Point(89, 75);
-            this.txtAngestellten.Name = "txtAngestellten";
-            this.txtAngestellten.Size = new System.Drawing.Size(169, 27);
-            this.txtAngestellten.TabIndex = 14;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Name:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 19);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Name:";
-            // 
-            // txtProjekt
-            // 
-            this.txtProjekt.Location = new System.Drawing.Point(89, 77);
-            this.txtProjekt.Name = "txtProjekt";
-            this.txtProjekt.Size = new System.Drawing.Size(169, 27);
-            this.txtProjekt.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 19);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Name:";
-            // 
-            // txtKunde
-            // 
-            this.txtKunde.Location = new System.Drawing.Point(89, 77);
-            this.txtKunde.Name = "txtKunde";
-            this.txtKunde.Size = new System.Drawing.Size(169, 27);
-            this.txtKunde.TabIndex = 21;
-            // 
-            // btnCreateKunde
-            // 
-            this.btnCreateKunde.Location = new System.Drawing.Point(89, 26);
-            this.btnCreateKunde.Name = "btnCreateKunde";
-            this.btnCreateKunde.Size = new System.Drawing.Size(58, 29);
-            this.btnCreateKunde.TabIndex = 17;
-            this.btnCreateKunde.Text = "Neu";
-            this.btnCreateKunde.UseVisualStyleBackColor = true;
-            this.btnCreateKunde.Click += new System.EventHandler(this.btnCreateKunde_Click);
-            // 
-            // btnViewKunden
-            // 
-            this.btnViewKunden.Location = new System.Drawing.Point(153, 26);
-            this.btnViewKunden.Name = "btnViewKunden";
-            this.btnViewKunden.Size = new System.Drawing.Size(105, 29);
-            this.btnViewKunden.TabIndex = 18;
-            this.btnViewKunden.Text = "Anzeigen";
-            this.btnViewKunden.UseVisualStyleBackColor = true;
-            this.btnViewKunden.Click += new System.EventHandler(this.btnViewKunden_Click);
-            // 
-            // btnEditKunde
-            // 
-            this.btnEditKunde.Location = new System.Drawing.Point(89, 110);
-            this.btnEditKunde.Name = "btnEditKunde";
-            this.btnEditKunde.Size = new System.Drawing.Size(169, 29);
-            this.btnEditKunde.TabIndex = 19;
-            this.btnEditKunde.Text = "Bearbeiten";
-            this.btnEditKunde.UseVisualStyleBackColor = true;
-            this.btnEditKunde.Click += new System.EventHandler(this.btnEditKunde_Click);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.txtNiederlassung);
-            this.groupBox6.Controls.Add(this.btnEditNiederlassung);
-            this.groupBox6.Controls.Add(this.btnViewNiederlassungen);
-            this.groupBox6.Controls.Add(this.btnCreateNiederlassung);
-            this.groupBox6.Location = new System.Drawing.Point(9, 40);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(363, 147);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Niederlassungen";
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label9);
@@ -478,52 +314,6 @@
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Abteilungen";
-            // 
-            // btnCreateNiederlassung
-            // 
-            this.btnCreateNiederlassung.Location = new System.Drawing.Point(82, 26);
-            this.btnCreateNiederlassung.Name = "btnCreateNiederlassung";
-            this.btnCreateNiederlassung.Size = new System.Drawing.Size(58, 29);
-            this.btnCreateNiederlassung.TabIndex = 0;
-            this.btnCreateNiederlassung.Text = "Neu";
-            this.btnCreateNiederlassung.UseVisualStyleBackColor = true;
-            this.btnCreateNiederlassung.Click += new System.EventHandler(this.btnCreateNiederlassung_Click);
-            // 
-            // btnViewNiederlassungen
-            // 
-            this.btnViewNiederlassungen.Location = new System.Drawing.Point(211, 26);
-            this.btnViewNiederlassungen.Name = "btnViewNiederlassungen";
-            this.btnViewNiederlassungen.Size = new System.Drawing.Size(124, 29);
-            this.btnViewNiederlassungen.TabIndex = 1;
-            this.btnViewNiederlassungen.Text = "Anzeigen";
-            this.btnViewNiederlassungen.UseVisualStyleBackColor = true;
-            this.btnViewNiederlassungen.Click += new System.EventHandler(this.btnViewNiederlassungen_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 73);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 19);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Name:";
-            // 
-            // txtNiederlassung
-            // 
-            this.txtNiederlassung.Location = new System.Drawing.Point(82, 71);
-            this.txtNiederlassung.Name = "txtNiederlassung";
-            this.txtNiederlassung.Size = new System.Drawing.Size(253, 27);
-            this.txtNiederlassung.TabIndex = 19;
-            // 
-            // btnEditNiederlassung
-            // 
-            this.btnEditNiederlassung.Location = new System.Drawing.Point(82, 104);
-            this.btnEditNiederlassung.Name = "btnEditNiederlassung";
-            this.btnEditNiederlassung.Size = new System.Drawing.Size(116, 29);
-            this.btnEditNiederlassung.TabIndex = 17;
-            this.btnEditNiederlassung.Text = "Bearbeiten";
-            this.btnEditNiederlassung.UseVisualStyleBackColor = true;
-            this.btnEditNiederlassung.Click += new System.EventHandler(this.btnEditNiederlassung_Click);
             // 
             // label9
             // 
@@ -571,6 +361,210 @@
             this.btnCreateAbteilung.UseVisualStyleBackColor = true;
             this.btnCreateAbteilung.Click += new System.EventHandler(this.btnCreateAbteilung_Click);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.txtNiederlassung);
+            this.groupBox6.Controls.Add(this.btnEditNiederlassung);
+            this.groupBox6.Controls.Add(this.btnViewNiederlassungen);
+            this.groupBox6.Controls.Add(this.btnCreateNiederlassung);
+            this.groupBox6.Location = new System.Drawing.Point(9, 40);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(363, 147);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Niederlassungen";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 19);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Name:";
+            // 
+            // txtNiederlassung
+            // 
+            this.txtNiederlassung.Location = new System.Drawing.Point(82, 71);
+            this.txtNiederlassung.Name = "txtNiederlassung";
+            this.txtNiederlassung.Size = new System.Drawing.Size(253, 27);
+            this.txtNiederlassung.TabIndex = 19;
+            // 
+            // btnEditNiederlassung
+            // 
+            this.btnEditNiederlassung.Location = new System.Drawing.Point(82, 104);
+            this.btnEditNiederlassung.Name = "btnEditNiederlassung";
+            this.btnEditNiederlassung.Size = new System.Drawing.Size(116, 29);
+            this.btnEditNiederlassung.TabIndex = 17;
+            this.btnEditNiederlassung.Text = "Bearbeiten";
+            this.btnEditNiederlassung.UseVisualStyleBackColor = true;
+            this.btnEditNiederlassung.Click += new System.EventHandler(this.btnEditNiederlassung_Click);
+            // 
+            // btnViewNiederlassungen
+            // 
+            this.btnViewNiederlassungen.Location = new System.Drawing.Point(211, 26);
+            this.btnViewNiederlassungen.Name = "btnViewNiederlassungen";
+            this.btnViewNiederlassungen.Size = new System.Drawing.Size(124, 29);
+            this.btnViewNiederlassungen.TabIndex = 1;
+            this.btnViewNiederlassungen.Text = "Anzeigen";
+            this.btnViewNiederlassungen.UseVisualStyleBackColor = true;
+            this.btnViewNiederlassungen.Click += new System.EventHandler(this.btnViewNiederlassungen_Click);
+            // 
+            // btnCreateNiederlassung
+            // 
+            this.btnCreateNiederlassung.Location = new System.Drawing.Point(82, 26);
+            this.btnCreateNiederlassung.Name = "btnCreateNiederlassung";
+            this.btnCreateNiederlassung.Size = new System.Drawing.Size(58, 29);
+            this.btnCreateNiederlassung.TabIndex = 0;
+            this.btnCreateNiederlassung.Text = "Neu";
+            this.btnCreateNiederlassung.UseVisualStyleBackColor = true;
+            this.btnCreateNiederlassung.Click += new System.EventHandler(this.btnCreateNiederlassung_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.AngestelltenID);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.btnNewAngestellter);
+            this.groupBox2.Controls.Add(this.btnViewAngestellte);
+            this.groupBox2.Controls.Add(this.btnEditAngestellten);
+            this.groupBox2.Location = new System.Drawing.Point(423, 52);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(274, 117);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Angestellten";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 19);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "ID:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.txtProjekt);
+            this.groupBox3.Controls.Add(this.btnCreateProject);
+            this.groupBox3.Controls.Add(this.btnShowProjects);
+            this.groupBox3.Controls.Add(this.btnEditProjekt);
+            this.groupBox3.Location = new System.Drawing.Point(421, 259);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(274, 155);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Projekte";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 19);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Name:";
+            // 
+            // txtProjekt
+            // 
+            this.txtProjekt.Location = new System.Drawing.Point(89, 77);
+            this.txtProjekt.Name = "txtProjekt";
+            this.txtProjekt.Size = new System.Drawing.Size(169, 27);
+            this.txtProjekt.TabIndex = 16;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.txtKunde);
+            this.groupBox4.Controls.Add(this.btnCreateKunde);
+            this.groupBox4.Controls.Add(this.btnViewKunden);
+            this.groupBox4.Controls.Add(this.btnEditKunde);
+            this.groupBox4.Location = new System.Drawing.Point(421, 504);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(276, 154);
+            this.groupBox4.TabIndex = 22;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Kunden";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(27, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 19);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Name:";
+            // 
+            // txtKunde
+            // 
+            this.txtKunde.Location = new System.Drawing.Point(89, 77);
+            this.txtKunde.Name = "txtKunde";
+            this.txtKunde.Size = new System.Drawing.Size(169, 27);
+            this.txtKunde.TabIndex = 21;
+            // 
+            // btnCreateKunde
+            // 
+            this.btnCreateKunde.Location = new System.Drawing.Point(89, 26);
+            this.btnCreateKunde.Name = "btnCreateKunde";
+            this.btnCreateKunde.Size = new System.Drawing.Size(58, 29);
+            this.btnCreateKunde.TabIndex = 17;
+            this.btnCreateKunde.Text = "Neu";
+            this.btnCreateKunde.UseVisualStyleBackColor = true;
+            this.btnCreateKunde.Click += new System.EventHandler(this.btnCreateKunde_Click);
+            // 
+            // btnViewKunden
+            // 
+            this.btnViewKunden.Location = new System.Drawing.Point(153, 26);
+            this.btnViewKunden.Name = "btnViewKunden";
+            this.btnViewKunden.Size = new System.Drawing.Size(105, 29);
+            this.btnViewKunden.TabIndex = 18;
+            this.btnViewKunden.Text = "Anzeigen";
+            this.btnViewKunden.UseVisualStyleBackColor = true;
+            this.btnViewKunden.Click += new System.EventHandler(this.btnViewKunden_Click);
+            // 
+            // btnEditKunde
+            // 
+            this.btnEditKunde.Location = new System.Drawing.Point(89, 110);
+            this.btnEditKunde.Name = "btnEditKunde";
+            this.btnEditKunde.Size = new System.Drawing.Size(169, 29);
+            this.btnEditKunde.TabIndex = 19;
+            this.btnEditKunde.Text = "Bearbeiten";
+            this.btnEditKunde.UseVisualStyleBackColor = true;
+            this.btnEditKunde.Click += new System.EventHandler(this.btnEditKunde_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnViewBestellungen);
+            this.groupBox5.Controls.Add(this.btnCreateBestellung);
+            this.groupBox5.Location = new System.Drawing.Point(421, 424);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(274, 74);
+            this.groupBox5.TabIndex = 23;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Bestellungen";
+            // 
+            // btnViewBestellungen
+            // 
+            this.btnViewBestellungen.Location = new System.Drawing.Point(153, 26);
+            this.btnViewBestellungen.Name = "btnViewBestellungen";
+            this.btnViewBestellungen.Size = new System.Drawing.Size(105, 32);
+            this.btnViewBestellungen.TabIndex = 1;
+            this.btnViewBestellungen.Text = "Anzeigen";
+            this.btnViewBestellungen.UseVisualStyleBackColor = true;
+            this.btnViewBestellungen.Click += new System.EventHandler(this.btnViewBestellungen_Click);
+            // 
+            // btnCreateBestellung
+            // 
+            this.btnCreateBestellung.Location = new System.Drawing.Point(31, 25);
+            this.btnCreateBestellung.Name = "btnCreateBestellung";
+            this.btnCreateBestellung.Size = new System.Drawing.Size(116, 33);
+            this.btnCreateBestellung.TabIndex = 0;
+            this.btnCreateBestellung.Text = "Erstellen";
+            this.btnCreateBestellung.UseVisualStyleBackColor = true;
+            this.btnCreateBestellung.Click += new System.EventHandler(this.btnCreateBestellung_Click);
+            // 
             // btnRaiseTestError
             // 
             this.btnRaiseTestError.Location = new System.Drawing.Point(12, 666);
@@ -580,6 +574,13 @@
             this.btnRaiseTestError.Text = "Raise SQL Test Error";
             this.btnRaiseTestError.UseVisualStyleBackColor = true;
             this.btnRaiseTestError.Click += new System.EventHandler(this.btnRaiseTestError_Click);
+            // 
+            // AngestelltenID
+            // 
+            this.AngestelltenID.Location = new System.Drawing.Point(49, 74);
+            this.AngestelltenID.Name = "AngestelltenID";
+            this.AngestelltenID.Size = new System.Drawing.Size(72, 27);
+            this.AngestelltenID.TabIndex = 25;
             // 
             // mainMenu
             // 
@@ -607,6 +608,10 @@
             this.groupSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unternehmDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -614,10 +619,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AngestelltenID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -651,7 +653,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtAngestellten;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnViewBestellungen;
@@ -676,5 +677,6 @@
         private System.Windows.Forms.Button btnViewNiederlassungen;
         private System.Windows.Forms.Button btnCreateNiederlassung;
         private System.Windows.Forms.Button btnRaiseTestError;
+        private System.Windows.Forms.NumericUpDown AngestelltenID;
     }
 }
