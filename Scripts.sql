@@ -35,8 +35,8 @@ GO
 
 CREATE PROCEDURE uspSearchAngestellte 
     (
-		@Nachname VARCHAR(MAX) = NULL,
-        @Vorname VARCHAR(MAX) = NULL
+		@Nachname VARCHAR(65) = NULL,
+        @Vorname VARCHAR(65) = NULL
 	)
 	 
 AS  
@@ -121,40 +121,99 @@ AS
 	END  
 GO  
 
--- Trigger: Update Anzahl Angestellte on INSERT (New employee)
+-- -- Trigger: Update Anzahl Angestellte on INSERT (New employee)
 
-DROP TRIGGER IF EXISTS trgUpdateAnzahlOnInsert
+-- DROP TRIGGER IF EXISTS trgUpdateAnzahlOnInsert
+-- GO
+
+-- CREATE TRIGGER trgUpdateAnzahlOnInsert
+-- ON Angestellte AFTER INSERT
+-- AS
+	-- BEGIN
+	
+		-- IF (CURSOR_STATUS('global', 'csrUpdateAnzahlAngestellte') >= -1)	-- deallocates cursor if it exists
+			-- DEALLOCATE csrUpdateAnzahlAngestellte;
+			
+		-- DECLARE csrUpdateAnzahlAngestellte CURSOR FAST_FORWARD FOR (SELECT FK_Abt_nr FROM INSERTED)
+		-- DECLARE @abtNr INTEGER 
+
+		-- OPEN csrUpdateAnzahlAngestellte 
+		-- FETCH NEXT FROM csrUpdateAnzahlAngestellte INTO @abtNr
+		
+		-- IF @@FETCH_STATUS <> 0	-- rolls back transaction and throws error-message if inserted-table does not contain any rows
+		-- BEGIN
+			-- THROW 50004, 'trgUpdateAnzahlOnInsert_Error: Es konnten keine neuen Zeilen gefunden werden', 1
+		-- END
+
+		-- WHILE @@FETCH_STATUS = 0 
+		-- BEGIN 
+
+			-- UPDATE Abteilung 
+			-- SET Anzahl_Angestellte += 1
+			-- WHERE PK_Abt_Nr = @abtNr;
+			
+			-- FETCH NEXT FROM csrUpdateAnzahlAngestellte INTO @abtNr  
+		-- END
+
+		-- CLOSE csrUpdateAnzahlAngestellte
+		-- DEALLOCATE csrUpdateAnzahlAngestellte
+		
+	-- END
+-- GO
+
+-- Trigger: Update Anzahl Angestellte on INSERT/DELETE
+
+DROP TRIGGER IF EXISTS trgUpdateAnzahlOnEmployee
 GO
 
-CREATE TRIGGER trgUpdateAnzahlOnInsert
-ON Angestellte AFTER INSERT
+CREATE TRIGGER trgUpdateAnzahlOnEmployee
+ON Angestellte AFTER INSERT, DELETE
 AS
 	BEGIN
 	
 		IF (CURSOR_STATUS('global', 'csrUpdateAnzahlAngestellte') >= -1)	-- deallocates cursor if it exists
 			DEALLOCATE csrUpdateAnzahlAngestellte;
-			
-		DECLARE csrUpdateAnzahlAngestellte CURSOR FAST_FORWARD FOR (SELECT FK_Abt_nr FROM INSERTED)
-		DECLARE @abtNr INTEGER 
+				
+		DECLARE @abtNr INTEGER
+		DECLARE @var INTEGER = 0
+		
+		IF ((SELECT COUNT(*) FROM INSERTED) > 0 )
+		BEGIN
+			DECLARE csrUpdateAnzahlAngestellte CURSOR FAST_FORWARD FOR (SELECT FK_Abt_nr FROM INSERTED)
+			SET @var = 1;
+		END
+		
+		ELSE
+		BEGIN
+			DECLARE csrUpdateAnzahlAngestellte CURSOR FAST_FORWARD FOR (SELECT FK_Abt_nr FROM DELETED)
+			SET @var = -1;
+		END
 
+		
 		OPEN csrUpdateAnzahlAngestellte 
 		FETCH NEXT FROM csrUpdateAnzahlAngestellte INTO @abtNr
 		
-		IF @@FETCH_STATUS <> 0	-- rolls back transaction and throws error-message if inserted-table does not contain any rows
+		IF @@FETCH_STATUS <> 0	-- rolls back transaction and throws error-message if deleted-table does not contain any rows
 		BEGIN
-			THROW 50004, 'trgUpdateAnzahlOnInsert_Error: Es konnten keine neuen Zeilen gefunden werden', 1
+			THROW 50014, 'trgUpdateAnzahlOnEmployee_Error: Es konnten keine neuen/gelöschten Zeilen gefunden werden', 1
 		END
 
 		WHILE @@FETCH_STATUS = 0 
 		BEGIN 
 
 			UPDATE Abteilung 
-			SET Anzahl_Angestellte += 1
+			SET Anzahl_Angestellte += @var
 			WHERE PK_Abt_Nr = @abtNr;
+			
+			IF ((SELECT Anzahl_Angestellte FROM Abteilung WHERE PK_Abt_Nr = @abtNr) < 0)	-- passt so?
+			BEGIN
+				THROW 50015, 'trgUpdateAnzahlOnEmployee_Error: Anzahl_Angestellte kleiner als 0', 1
+			END
 			
 			FETCH NEXT FROM csrUpdateAnzahlAngestellte INTO @abtNr  
 		END
 
+		
 		CLOSE csrUpdateAnzahlAngestellte
 		DEALLOCATE csrUpdateAnzahlAngestellte
 		
@@ -194,6 +253,32 @@ AS
 	END
 GO
 
+
+-- Trigger: Toggle active on Abteilung
+
+DROP TRIGGER IF EXISTS trgAbteilungActive
+GO
+
+CREATE TRIGGER trgAbteilungActive
+ON Abteilung AFTER UPDATE
+AS
+	BEGIN
+	
+		IF (INSERTED.Anzahl_Angestellte <> DELETED.Anzahl_Angestellte)
+		BEGIN
+			
+			IF ((SELECT COUNT(*) FROM INSERTED) > 1)
+				THROW 50005, 'trgUpdateAnzahlOnUpdate_Error: Es können nicht mehr als 1 Zeile pro UPDATE-Statement geupdated werden', 1
+	
+			UPDATE Abteilung
+			SET active = CASE 	WHEN Anzahl_Angestellte = 0 THEN FALSE
+								ELSE TRUE
+			END
+			
+		END
+		
+	END
+GO
 
 --Angestellte trigger
 
