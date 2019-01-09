@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Unternehm" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=Unternehm;Integrated Security=True" SettingsObjectName="DBS_GUI.Properties.Settings" SettingsPropertyName="UnternehmConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Abteilung" Member="Abteilungs">
+    <Type Name="Abteilung">
+      <Column Name="PK_Abt_nr" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Anzahl_Angestellte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="Abteilung_Angestellte" Member="Angestelltes" ThisKey="PK_Abt_nr" OtherKey="Abt_nr" Type="Angestellte" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Angestellte" Member="Angestelltes">
+    <Type Name="Angestellte">
+      <Column Name="PK_AngID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Vorname" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Nachname" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Gehalt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirmaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Abt_nr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Angestellte_Pro_Ang" Member="Pro_Angs" ThisKey="PK_AngID" OtherKey="FK_AngID" Type="Pro_Ang" />
+      <Association Name="Abteilung_Angestellte" Member="Abteilung" ThisKey="Abt_nr" OtherKey="PK_Abt_nr" Type="Abteilung" IsForeignKey="true" />
+      <Association Name="Niederlassung_Angestellte" Member="Niederlassung" ThisKey="FirmaID" OtherKey="PK_FirmaID" Type="Niederlassung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bestellung" Member="Bestellungs">
+    <Type Name="Bestellung">
+      <Column Name="BessID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_Proj" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_Kunde" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="Preis" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Kunde_Bestellung" Member="Kunde" ThisKey="FK_Kunde" OtherKey="PK_KundID" Type="Kunde" IsForeignKey="true" />
+      <Association Name="Projekt_Bestellung" Member="Projekt" ThisKey="FK_Proj" OtherKey="PK_Proj_nr" Type="Projekt" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kunde" Member="Kundes">
+    <Type Name="Kunde">
+      <Column Name="PK_KundID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vorname" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Nachname" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Association Name="Kunde_Bestellung" Member="Bestellungs" ThisKey="PK_KundID" OtherKey="FK_Kunde" Type="Bestellung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Niederlassung" Member="Niederlassungs">
+    <Type Name="Niederlassung">
+      <Column Name="PK_FirmaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ort" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="Niederlassung_Angestellte" Member="Angestelltes" ThisKey="PK_FirmaID" OtherKey="FirmaID" Type="Angestellte" />
+      <Association Name="Niederlassung_Projekt" Member="Projekts" ThisKey="PK_FirmaID" OtherKey="FK_Nder_nr" Type="Projekt" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pro_Ang" Member="Pro_Angs">
+    <Type Name="Pro_Ang">
+      <Column Name="FK_AngID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_Proj_nr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Angestellte_Pro_Ang" Member="Angestellte" ThisKey="FK_AngID" OtherKey="PK_AngID" Type="Angestellte" IsForeignKey="true" />
+      <Association Name="Projekt_Pro_Ang" Member="Projekt" ThisKey="FK_Proj_nr" OtherKey="PK_Proj_nr" Type="Projekt" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Projekt" Member="Projekts">
+    <Type Name="Projekt">
+      <Column Name="PK_Proj_nr" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Start_Date" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="End_Date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="FK_Nder_nr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Projekt_Bestellung" Member="Bestellungs" ThisKey="PK_Proj_nr" OtherKey="FK_Proj" Type="Bestellung" />
+      <Association Name="Projekt_Pro_Ang" Member="Pro_Angs" ThisKey="PK_Proj_nr" OtherKey="FK_Proj_nr" Type="Pro_Ang" />
+      <Association Name="Niederlassung_Projekt" Member="Niederlassung" ThisKey="FK_Nder_nr" OtherKey="PK_FirmaID" Type="Niederlassung" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

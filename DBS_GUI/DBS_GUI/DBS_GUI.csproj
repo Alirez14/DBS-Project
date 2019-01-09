@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DAEA9DF-79EE-45C7-99F0-B50A06EB3F71}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DBS_GUI</RootNamespace>
+    <AssemblyName>DBS_GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abteillung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abteillung.Designer.cs">
+      <DependentUpon>Abteillung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddressUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddressUpdate.designer.cs">
+      <DependentUpon>AddressUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CityUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CityUpdate.designer.cs">
+      <DependentUpon>CityUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses1.cs">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteCus.designer.cs">
+      <DependentUpon>DeleteCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editAngestellten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editAngestellten.Designer.cs">
+      <DependentUpon>editAngestellten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailUpdate.designer.cs">
+      <DependentUpon>EmailUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kunde.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kunde.designer.cs">
+      <DependentUpon>Kunde.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newAngestellten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newAngestellten.Designer.cs">
+      <DependentUpon>newAngestellten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listAngestellte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listAngestellte.Designer.cs">
+      <DependentUpon>listAngestellte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainMenu.Designer.cs">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nider.Designer.cs">
+      <DependentUpon>Nider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneUpdate.designer.cs">
+      <DependentUpon>PhoneUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Projekt.designer.cs">
+      <DependentUpon>Projekt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjektBearbeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjektBearbeiten.designer.cs">
+      <DependentUpon>ProjektBearbeiten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projektteilnehmer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Projektteilnehmer.Designer.cs">
+      <DependentUpon>Projektteilnehmer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjShow.Designer.cs">
+      <DependentUpon>ProjShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnternehmDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnternehmDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Abteillung.resx">
+      <DependentUpon>Abteillung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddressUpdate.resx">
+      <DependentUpon>AddressUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CityUpdate.resx">
+      <DependentUpon>CityUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteCus.resx">
+      <DependentUpon>DeleteCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editAngestellten.resx">
+      <DependentUpon>editAngestellten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailUpdate.resx">
+      <DependentUpon>EmailUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kunde.resx">
+      <DependentUpon>Kunde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newAngestellten.resx">
+      <DependentUpon>newAngestellten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listAngestellte.resx">
+      <DependentUpon>listAngestellte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainMenu.resx">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nider.resx">
+      <DependentUpon>Nider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneUpdate.resx">
+      <DependentUpon>PhoneUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projekt.resx">
+      <DependentUpon>Projekt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjektBearbeiten.resx">
+      <DependentUpon>ProjektBearbeiten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projektteilnehmer.resx">
+      <DependentUpon>Projektteilnehmer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjShow.resx">
+      <DependentUpon>ProjShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UnternehmDataSet.xsc">
+      <DependentUpon>UnternehmDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UnternehmDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UnternehmDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnternehmDataSet.xss">
+      <DependentUpon>UnternehmDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

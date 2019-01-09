@@ -1,0 +1,16 @@
+# don't track visual studio IDE data
+DBS_GUI/.vs
+DBS_GUI/.vs/*
+
+
+# also don't load binary files 
+DBS_GUI/DBS_GUI/obj
+DBS_GUI/DBS_GUI/obj/*
+
+DBS_GUI/DBS_GUI/bin
+DBS_GUI/DBS_GUI/bin/*
+
+# for Rider
+.idea
+
+
