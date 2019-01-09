@@ -49,7 +49,7 @@ namespace DBS_GUI
 
 
                 SqlConnection con = new SqlConnection
-                    (@"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;");
+                    (@"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;");
 
                 SqlCommand command = new SqlCommand();
                 command.Connection = con;

@@ -21,7 +21,7 @@ namespace DBS_GUI
             DataSet data = new DataSet();
             string command = "Select * From Projekt";
             connection.ConnectionString =
-                @"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True";
+                @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True";
             try
             {
                 connection.Open();
