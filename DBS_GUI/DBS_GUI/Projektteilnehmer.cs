@@ -14,23 +14,53 @@ namespace DBS_GUI {
         }
 
         private void Projektteilnehmer_Load(object sender, EventArgs e) {
-
             selectProjekt.DataSource = getProjects();
             selectProjekt.DisplayMember = "Projektname";
             selectProjekt.ValueMember = "id";
 
-            selectTeilnehmer.DataSource = getAngestellte("");
+            selectTeilnehmer.DataSource = getAllAngestellte();
             selectTeilnehmer.DisplayMember = "Angestellter";
             selectTeilnehmer.ValueMember = "id";
-
-            selectTeilnehmer.SetSelected(0, false);
-            //selectTeilnehmer.SetSelected(10, true);
-            //selectTeilnehmer.SetSelected(3, true);
         }
 
-        private DataTable getProjects () {
-            DataTable dt = new DataTable();
+        private void ProjectChanged(object sender, EventArgs e) {
+            DataRowView drv = (DataRowView)selectProjekt.SelectedItem;
+            listTeilnehmer.DataSource = getAngestellte((String)drv["Projektname"]);
+        }
 
+        private void btnEntfernen_Click(object sender, EventArgs e) {
+            DataRowView drvT = (DataRowView)selectTeilnehmer.SelectedItem;
+            DataRowView drvP = (DataRowView)selectProjekt.SelectedItem;
+
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("uspDeleteTeilnehmer", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ang_id", SqlDbType.Int).Value = TeilnehmerID.Value;
+            cmd.Parameters.AddWithValue("@proj_id", SqlDbType.Int).Value = drvP["id"];
+            int result = cmd.ExecuteNonQuery();
+            connection.Close();
+
+            listTeilnehmer.DataSource = getAngestellte((String)drvP["Projektname"]);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e) {
+            DataRowView drvT = (DataRowView)selectTeilnehmer.SelectedItem;
+            DataRowView drvP = (DataRowView)selectProjekt.SelectedItem;
+
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("uspAddTeilnehmer", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@name", SqlDbType.VarChar).Value = (String)drvT["Angestellter"];
+            cmd.Parameters.AddWithValue("@projekt", SqlDbType.VarChar).Value = (String)drvP["Projektname"];
+            int result = cmd.ExecuteNonQuery();
+            connection.Close();
+
+            listTeilnehmer.DataSource = getAngestellte((String)drvP["Projektname"]);
+        }
+
+        // helper functions:
+        private DataTable getProjects() {
+            DataTable dt = new DataTable();
             connection.Open();
             SqlCommand cmd = new SqlCommand("uspGetProjekte", connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -40,33 +70,30 @@ namespace DBS_GUI {
             return dt;
         }
 
-        private DataTable getAngestellte(string filter) {
+        private DataTable getAngestellte(string projekt) {
             DataTable dt = new DataTable();
-
             connection.Open();
-            SqlCommand cmd = new SqlCommand("uspGetAngestellteFilteredNicely", connection);
+            SqlCommand cmd = new SqlCommand("uspGetAngestellteForProjektNicely", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@Name", SqlDbType.VarChar).Value = filter;
-            cmd.Parameters.AddWithValue("@active", SqlDbType.Int).Value = 0;
-
+            cmd.Parameters.AddWithValue("@Projekt", SqlDbType.VarChar).Value = projekt;
             SqlDataReader reader = cmd.ExecuteReader();
             dt.Load(reader);
             connection.Close();
             return dt;
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e) {
-            MessageBox.Show("Nothing changed!");
-            this.Close();
+        private DataTable getAllAngestellte() {
+            DataTable dt = new DataTable();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("uspGetAngestellteFilteredNicely", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Name", SqlDbType.VarChar).Value = "";
+            cmd.Parameters.AddWithValue("@active", SqlDbType.Int).Value = 0;
+            SqlDataReader reader = cmd.ExecuteReader();
+            dt.Load(reader);
+            connection.Close();
+            return dt;
         }
 
-        private void ProjectChanged(object sender, EventArgs e) {
-            
-        }
-
-        private void Teilnehmerfilter_changed(object sender, EventArgs e) {
-            selectTeilnehmer.DataSource = getAngestellte(txtTeilnehmerfilter.Text);
-        }
     }
 }
