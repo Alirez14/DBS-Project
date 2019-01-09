@@ -33,6 +33,8 @@ GO
 
 GO  
 
+DROP PROCEDURE IF EXISTS uspSearchAngestellte;
+GO
 CREATE PROCEDURE uspSearchAngestellte 
     (
 		@Nachname VARCHAR(65) = NULL,
@@ -52,23 +54,12 @@ AS
 			IF ( LEN(@Nachname) > 64 OR LEN(@Vorname) > 64 )
 				THROW 50002, 'Namen können nicht länger als 64 Zeichen lang sein', 1
 				
-			IF (@Vorname = NULL)	-- entweder den part hier oder die IS NULL checks auf die variablen in den SELECT statements weggeben, beides macht keinen sinn
-			BEGIN
-				PRINT 'Es wurde nur ein Parameter übergeben, die Suche wird sowohl in Vorname als auch in NACHNAHME durchgeführt...'
-				SET @Vorname = @Nachname
-			END
-			ELSE 
-			BEGIN
-				PRINT 'Es wurde nur ein Parameter übergeben, die Suche wird sowohl in Vorname als auch in NACHNAHME durchgeführt...'
-				SET @Nachname = @Vorname
-			END
-				
-			IF (SELECT COUNT(*) FROM Angestellte WHERE (@Nachname IS NULL OR  Nachname LIKE '%' + @Nachname + '%') AND (@Vorname IS NULL OR  Vorname LIKE '%' + @Vorname + '%')) = 0
+			IF (SELECT COUNT(*) FROM Angestellte WHERE (@Nachname IS NULL OR Nachname LIKE '%' + @Nachname + '%') AND (@Vorname IS NULL OR Vorname LIKE '%' + @Vorname + '%')) = 0
 				THROW 50003, 'Es konnte keine Person mit gegebenen Vor-/Nachnamen gefunden werden' , 1
 		
 			SELECT * FROM Angestellte
-			WHERE (@Nachname IS NULL OR  Nachname LIKE '%' + @Nachname + '%')
-			AND (@Vorname IS NULL OR  Vorname LIKE '%' + @Vorname + '%');
+			WHERE (@Nachname IS NULL OR Nachname LIKE '%' + @Nachname + '%')
+			AND (@Vorname IS NULL OR Vorname LIKE '%' + @Vorname + '%');
 			
 			-- ROLLBACK
 			COMMIT
@@ -82,26 +73,27 @@ AS
 			
 		END CATCH
 		
-	END  
 GO  
 
--- EXECUTE getAngestellte @Vorname = 'Corne' go;
+ EXECUTE uspSearchAngestellte @Vorname = 'Alireza', @Nachname = 'Esbati'; 
+ GO
 
 -- stored procedure for viewing a Projekt
 
 GO  
 
+DROP PROCEDURE IF EXISTS uspGetProjekt;
+GO
 CREATE PROCEDURE uspGetProjekt
 (@Name VARCHAR(MAX) = NULL)
-    -- Add the parameters for the stored procedure here  
      
 AS  
 	BEGIN TRANSACTION
-	
+	SET TRANSACTION ISOLATION LEVEL READ COMMITTED
 		BEGIN TRY
 		
 			IF (select COUNT(*) from Projekt where @Name = Name) = 0
-				THROW 50004, 'Dieses Projekt existiert nicht' , 1
+				THROW 50004, 'Dieses Projekt existiert nicht' , 1;
 			
 			SELECT * FROM Projekt
 			WHERE @Name = Name;
@@ -117,9 +109,10 @@ AS
 			ROLLBACK
 			
 		END CATCH
-		
-	END  
 GO  
+
+--EXEC uspGetProjekt 'Proj';
+--GO
 
 -- -- Trigger: Update Anzahl Angestellte on INSERT (New employee)
 
@@ -195,7 +188,7 @@ AS
 		
 		IF @@FETCH_STATUS <> 0	-- rolls back transaction and throws error-message if deleted-table does not contain any rows
 		BEGIN
-			THROW 50014, 'trgUpdateAnzahlOnEmployee_Error: Es konnten keine neuen/gelöschten Zeilen gefunden werden', 1
+			;THROW 50014, 'trgUpdateAnzahlOnEmployee_Error: Es konnten keine neuen/gelöschten Zeilen gefunden werden', 1
 		END
 
 		WHILE @@FETCH_STATUS = 0 
@@ -207,7 +200,7 @@ AS
 			
 			IF ((SELECT Anzahl_Angestellte FROM Abteilung WHERE PK_Abt_Nr = @abtNr) < 0)	-- passt so?
 			BEGIN
-				THROW 50015, 'trgUpdateAnzahlOnEmployee_Error: Anzahl_Angestellte kleiner als 0', 1
+				;THROW 50015, 'trgUpdateAnzahlOnEmployee_Error: Anzahl_Angestellte kleiner als 0', 1
 			END
 			
 			FETCH NEXT FROM csrUpdateAnzahlAngestellte INTO @abtNr  
@@ -220,6 +213,16 @@ AS
 	END
 GO
 
+--TEST
+--INSERT INTO Angestellte (Sex, Vorname, Nachname, Email, Gehalt, FK_FirmaID, FK_Abt_nr)
+--	VALUES ('M', 'Testus', 'Testinger', 'test@mail.at', 999, 2, 3),
+--			('M', 'Testus2', 'Testinger2', 'test2@mail.at', 999, 2, 3),
+--			('M', 'Testus3', 'Testinger3', 'test3@mail.at', 999, 2, 2);
+
+--DELETE FROM Angestellte WHERE Vorname LIKE 'Testus%' and Nachname LIKE 'Testinger%';
+
+--SELECT * FROM Abteilung;
+
 
 -- Trigger: Update Anzahl Angestellte on UPDATE (Switch department)
 
@@ -231,7 +234,7 @@ ON Angestellte AFTER UPDATE
 AS
 	BEGIN
 	
-		IF (INSERTED.FK_Abt_nr <> DELETED.FK_Abt_nr)
+		IF ((SELECT FK_Abt_nr FROM INSERTED) <> (SELECT FK_Abt_nr FROM DELETED))
 		BEGIN
 			
 			IF ((SELECT COUNT(*) FROM INSERTED) > 1)
@@ -253,6 +256,12 @@ AS
 	END
 GO
 
+--TEST
+--SELECT * FROM Abteilung;
+
+--UPDATE Angestellte
+--SET FK_Abt_nr = 5 WHERE Vorname = 'Testus';
+
 
 -- Trigger: Toggle active on Abteilung
 
@@ -264,21 +273,25 @@ ON Abteilung AFTER UPDATE
 AS
 	BEGIN
 	
-		IF (INSERTED.Anzahl_Angestellte <> DELETED.Anzahl_Angestellte)
+		IF ((SELECT Anzahl_Angestellte FROM INSERTED) <> (SELECT Anzahl_Angestellte FROM DELETED))
 		BEGIN
 			
 			IF ((SELECT COUNT(*) FROM INSERTED) > 1)
 				THROW 50005, 'trgUpdateAnzahlOnUpdate_Error: Es können nicht mehr als 1 Zeile pro UPDATE-Statement geupdated werden', 1
 	
 			UPDATE Abteilung
-			SET active = CASE 	WHEN Anzahl_Angestellte = 0 THEN FALSE
-								ELSE TRUE
+			SET active = CASE 	WHEN Anzahl_Angestellte = 0 THEN 0
+								ELSE 1
 			END
 			
 		END
 		
 	END
 GO
+
+--TEST
+--DELETE FROM Angestellte WHERE FK_Abt_nr = 4;
+
 
 --Angestellte trigger
 
