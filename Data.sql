@@ -41,7 +41,7 @@ insert into Abteilung (Name, Anzahl_Angestellte, Email, Telefon) values ('Facili
 insert into Abteilung (Name, Anzahl_Angestellte, Email, Telefon) values ('Buchhaltung', 3, 'buchhaltung@firma.com', '7816841938');
 insert into Abteilung (Name, Anzahl_Angestellte, Email, Telefon) values ('CEO', 3, 'ceo@firma.com', '4607340613');
 insert into Abteilung (Name, Anzahl_Angestellte, Email, Telefon) values ('Projektmanagement', 3, 'projektmanagement@firma.com', '8801153941');
-insert into Abteilung (Name, Anzahl_Angestellte, Email, Telefon) values ('Sekräterin', 3, 'sekraeterin@firma.com', '5133210036');
+insert into Abteilung (Name, Anzahl_Angestellte, Email, Telefon) values ('Sekrï¿½terin', 3, 'sekraeterin@firma.com', '5133210036');
 
 
 insert into Angestellte (Vorname, Nachname, Email, Sex , Gehalt, FK_FirmaID) values ('Gerick', 'Solomonides', 'gsolomonides0@1688.com', 'M', 5000, 1);

@@ -22,7 +22,7 @@ namespace Projekt
         {
             SqlConnection con =
                 new SqlConnection(
-                    @"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True");
+                    @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True");
 
             int count = 0;
 

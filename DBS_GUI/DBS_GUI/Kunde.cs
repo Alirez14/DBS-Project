@@ -20,7 +20,7 @@ namespace DBS_GUI
         {
             int count = 0;
             con.ConnectionString =
-                @"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;";
+                @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;";
             foreach (Control c in tabPage1.Controls)
             {
                 if (c is TextBox)
@@ -114,7 +114,7 @@ namespace DBS_GUI
             int count = 0; 
 
             con.ConnectionString =
-                @"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;";
+                @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;";
 
 
             foreach (Control c in tabPage2.Controls)

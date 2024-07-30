@@ -20,9 +20,9 @@
 * Erste Windows Forms fertig.
 * Main Menu fertig
 * Angestellte fehlt nur mehr Update
-* 
-* 
-* 
+*
+*
+*
 
 #### Arbeitspakete
 ```
@@ -86,9 +86,9 @@ deactivateKunde                 Sina                     100%
 
 > see 'markuskrenn.sql'
 
-* 
-* 
-* 
+*
+*
+*
 
 
 #### Arbeitspakete

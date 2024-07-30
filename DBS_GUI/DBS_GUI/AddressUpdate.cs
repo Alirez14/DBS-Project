@@ -14,7 +14,7 @@ namespace DBS_GUI
         private void update_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection
-                (@"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;");
+                (@"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;");
             int count = 0;
             foreach (Control c in this.Controls)
             {

@@ -20,7 +20,7 @@ namespace DBS_GUI {
             SqlCommand cmd = new SqlCommand();
             DataSet data = new DataSet();
 
-            con.ConnectionString = @"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True";
+            con.ConnectionString = @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True";
 
             int count = 0;
             foreach (Control c in panel1.Controls) {
@@ -99,7 +99,7 @@ namespace DBS_GUI {
                 DataSet projAdd = new DataSet();
 
                 con.ConnectionString =
-                    @"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True";
+                    @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True";
 
                 SqlCommand command = new SqlCommand();
                 SqlCommand select = new SqlCommand();
@@ -168,7 +168,7 @@ namespace DBS_GUI {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            con.ConnectionString = @"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True";
+            con.ConnectionString = @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True";
 
             int count = 0;
             foreach (Control c in panel1.Controls) {

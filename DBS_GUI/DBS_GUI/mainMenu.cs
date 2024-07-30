@@ -14,7 +14,7 @@ namespace DBS_GUI {
         public mainMenu() {
             InitializeComponent();
 
-            txtDBServer.Text = @"MARKUS\SQLEXPRESS";
+            txtDBServer.Text = @".\SQLEXPRESS";
             txtDatabase.Text = "Unternehm";
 
             connection = new SqlConnection($"Data Source={txtDBServer.Text};Initial Catalog={txtDatabase.Text};Integrated Security=True");

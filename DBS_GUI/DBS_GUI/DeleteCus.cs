@@ -25,7 +25,7 @@ namespace DBS_GUI
                 MessageBox.Show("Delete the Customer?", "DELETE?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             SqlConnection con = new SqlConnection
-                (@"Data Source = DESKTOP-6JC714Q\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;");
+                (@"Data Source = (local)\SQLEXPRESS; Initial Catalog = Unternehm; Integrated Security = True;");
 
             SqlCommand command = new SqlCommand();
             SqlCommand query = new SqlCommand();
